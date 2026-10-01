@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Article — The Minimalist Dentist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    :root {
+      --ivory:   #F7F3EC;
+      --orange:  #D96B3A;
+      --charcoal:#2C2C2C;
+      --muted:   #8A8478;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--ivory);
+      color: var(--charcoal);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 4rem;
+      background: var(--ivory);
+      border-bottom: 1px solid rgba(44,44,44,.08);
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.15rem;
+      letter-spacing: .08em;
+      color: var(--charcoal);
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: .78rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      text-decoration: none;
+      opacity: .7;
+      transition: opacity .2s;
+    }
+    .nav-links a:hover, .nav-links a.active { opacity: 1; }
+    .nav-links a.active { border-bottom: 1px solid var(--orange); padding-bottom: 2px; }
+
+    /* ARTICLE HEADER HERO */
+    .article-hero {
+      padding: 9rem 4rem 4rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .75rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--orange);
+      text-decoration: none;
+      margin-bottom: 2rem;
+      font-weight: 500;
+    }
+    .back-link:hover { text-decoration: underline; }
+
+    .article-category {
+      font-size: .72rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 1rem;
+    }
+    .article-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+      line-height: 1.15;
+      color: var(--charcoal);
+      margin-bottom: 1.5rem;
+    }
+    .article-meta-bar {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(44,44,44,.1);
+      font-size: .82rem;
+      color: var(--muted);
+      flex-wrap: wrap;
+    }
+    .author-badge {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+    .author-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--charcoal);
+      color: var(--ivory);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+    }
+    .author-info strong {
+      display: block;
+      color: var(--charcoal);
+      font-weight: 500;
+    }
+    .author-info span {
+      font-size: .75rem;
+      color: var(--muted);
+    }
+
+    /* ARTWORK BANNER */
+    .article-visual-banner {
+      width: 100%;
+      height: 320px;
+      background: var(--charcoal);
+      margin: 2rem 0 3.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .article-visual-banner span {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 6rem;
+      color: rgba(217,107,58,.4);
+    }
+
+    /* MAIN CONTENT LAYOUT */
+    .article-body-wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 4rem 6rem;
+    }
+
+    .article-content {
+      font-size: 1rem;
+      color: #333333;
+      line-height: 1.9;
+    }
+    .article-content .lead {
+      font-size: 1.18rem;
+      line-height: 1.8;
+      color: var(--charcoal);
+      font-weight: 300;
+      margin-bottom: 2rem;
+    }
+    .article-content h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.9rem;
+      margin: 2.5rem 0 1rem;
+      color: var(--charcoal);
+      line-height: 1.25;
+    }
+    .article-content h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: 1.4rem;
+      margin: 2rem 0 .75rem;
+      color: var(--charcoal);
+    }
+    .article-content p {
+      margin-bottom: 1.5rem;
+    }
+    .article-content ul, .article-content ol {
+      margin: 1.5rem 0 1.5rem 1.5rem;
+    }
+    .article-content li {
+      margin-bottom: .6rem;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--orange);
+      padding-left: 1.5rem;
+      margin: 2.5rem 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.35rem;
+      color: var(--charcoal);
+      line-height: 1.5;
+    }
+    .takeaway-box {
+      background: #F0EBE1;
+      border: 1px solid rgba(44,44,44,.08);
+      border-left: 3px solid var(--orange);
+      padding: 1.8rem;
+      margin: 2rem 0 2.5rem;
+    }
+    .takeaway-box h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      color: var(--charcoal);
+      margin-bottom: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .takeaway-box ul {
+      margin: 0 0 0 1.2rem;
+    }
+
+    .article-cta {
+      background: var(--charcoal);
+      color: var(--ivory);
+      padding: 2.5rem;
+      margin-top: 4rem;
+    }
+    .article-cta h3 {
+      color: var(--ivory);
+      margin-top: 0;
+      font-size: 1.5rem;
+    }
+    .article-cta p {
+      color: rgba(247,243,236,.65);
+      font-size: .9rem;
+      margin-bottom: 1.5rem;
+    }
+    .article-cta .btn {
+      background: var(--orange);
+      color: var(--ivory);
+      padding: .75rem 1.75rem;
+      font-size: .72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      transition: opacity .2s;
+    }
+    .article-cta .btn:hover { opacity: .85; }
+
+    /* AUTHOR FOOTER CARD */
+    .author-footer-card {
+      margin-top: 4rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid rgba(44,44,44,.1);
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    /* RELATED POSTS SECTION */
+    .related-section {
+      background: #F0EBE1;
+      padding: 5rem 4rem;
+      border-top: 1px solid rgba(44,44,44,.08);
+    }
+    .related-section h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.8rem;
+      margin-bottom: 2.5rem;
+    }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .related-card {
+      background: var(--ivory);
+      padding: 2rem;
+      border: 1px solid rgba(44,44,44,.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .related-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      margin-bottom: .75rem;
+      line-height: 1.3;
+    }
+    .related-card p {
+      font-size: .85rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
+    }
+    .related-card a {
+      color: var(--orange);
+      text-decoration: none;
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    /* NEWSLETTER */
+    .newsletter {
+      background: var(--charcoal);
+      color: var(--ivory);
+      padding: 5rem 4rem;
+      display: flex;
+      gap: 4rem;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .newsletter-left h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      margin-bottom: .75rem;
+    }
+    .newsletter-left p {
+      font-size: .88rem;
+      color: rgba(247,243,236,.5);
+      max-width: 360px;
+      line-height: 1.8;
+    }
+    .newsletter-form {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+    }
+    .newsletter-form input {
+      background: rgba(247,243,236,.1);
+      border: 1px solid rgba(247,243,236,.15);
+      padding: .8rem 1.25rem;
+      font-family: 'Inter', sans-serif;
+      font-size: .88rem;
+      color: var(--ivory);
+      outline: none;
+      width: 260px;
+    }
+    .newsletter-form button {
+      background: var(--orange);
+      color: var(--ivory);
+      border: none;
+      padding: .8rem 1.5rem;
+      font-family: 'Inter', sans-serif;
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--charcoal);
+      color: rgba(247,243,236,.5);
+      padding: 3rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: .78rem;
+      border-top: 1px solid rgba(247,243,236,.05);
+    }
+    footer .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: var(--ivory);
+    }
+    footer a { color: rgba(247,243,236,.5); text-decoration: none; }
+    footer a:hover { color: var(--orange); }
+
+    @media (max-width: 768px) {
+      nav { padding: 1.25rem 1.5rem; }
+      .article-hero, .article-body-wrapper, .related-section, .newsletter, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .article-hero { padding-top: 7rem; }
+      .newsletter { flex-direction: column; gap: 2rem; }
+      .newsletter-form input { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <img src="images/logo-brand.jpeg" alt="The Minimalist Dentist Logo" class="nav-logo-img" />
+      <span>The Minimalist Dentist</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- DYNAMIC ARTICLE HOLDER -->
+  <article id="article-container">
+    <div class="article-hero">
+      <a href="blog.html" class="back-link">← Back to All Articles</a>
+      <p class="article-category" id="post-category">Category</p>
+      <h1 id="post-title">Loading Article...</h1>
+      <div class="article-meta-bar">
+        <div class="author-badge">
+          <div class="author-avatar" id="author-initial">D</div>
+          <div class="author-info">
+            <strong id="post-author">Dr. Ananya Sharma, MDS</strong>
+            <span id="post-author-role">Lead Practitioner</span>
+          </div>
+        </div>
+        <span id="post-date">May 2026</span>
+        <span>·</span>
+        <span id="post-readtime">5 min read</span>
+      </div>
+      <div class="article-visual-banner"><span id="post-icon">◎</span></div>
+    </div>
+
+    <div class="article-body-wrapper">
+      <div class="article-content" id="post-content">
+        <p>Loading post content...</p>
+      </div>
+
+      <div class="author-footer-card">
+        <div class="author-avatar" style="width:50px;height:50px;font-size:1.4rem;">D</div>
+        <div>
+          <strong style="color:var(--charcoal);font-size:1rem;" id="footer-author-name">Dr. Ananya Sharma, MDS</strong>
+          <p style="font-size:.82rem;color:var(--muted);margin-top:.2rem;">Founding Dentist at The Minimalist Dentist. Passionate about evidence-based oral care, patient comfort, and clear communication.</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- RELATED ARTICLES -->
+  <section class="related-section">
+    <h3>More from The Journal</h3>
+    <div class="related-grid" id="related-grid">
+      <!-- Dynamically filled -->
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <div class="newsletter-left">
+      <p class="article-category">Stay Informed</p>
+      <h2>Oral health insights,<br />once a month.</h2>
+      <p>No spam. No scare tactics. Just one well-researched email about your teeth and overall wellness.</p>
+    </div>
+    <form class="newsletter-form" onsubmit="event.preventDefault();">
+      <input type="email" placeholder="your@email.com" />
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <footer>
+    <a class="footer-logo" href="index.html">
+      <img src="images/logo-brand.jpeg" alt="The Minimalist Dentist Logo" class="footer-logo-img" />
+      <span>The Minimalist Dentist</span>
+    </a>
+    <span>© 2026 · www.themininalistdentist.in</span>
+    <div style="display:flex;gap:1.5rem;">
+      <a href="services.html">Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+
+  <script src="js/blog-data.js"></script>
+  <script>
+    (function() {
+      const params = new URLSearchParams(window.location.search);
+      let postId = params.get('id') || params.get('slug');
+
+      if (!postId) {
+        // default to first post
+        postId = BLOG_POSTS[0].id;
+      }
+
+      const post = BLOG_POSTS.find(p => p.id === postId || p.slug === postId || p.slug.includes(postId)) || BLOG_POSTS[0];
+
+      document.title = `${post.title} — The Minimalist Dentist`;
+      document.getElementById('post-category').textContent = post.category;
+      document.getElementById('post-title').textContent = post.title;
+      document.getElementById('post-author').textContent = post.author;
+      document.getElementById('post-author-role').textContent = post.authorRole;
+      document.getElementById('footer-author-name').textContent = post.author;
+      document.getElementById('author-initial').textContent = post.author.charAt(4) || 'D';
+      document.getElementById('post-date').textContent = post.date;
+      document.getElementById('post-readtime').textContent = post.readTime;
+      document.getElementById('post-icon').textContent = post.heroIcon;
+      document.getElementById('post-content').innerHTML = post.content;
+
+      // Populate Related Grid
+      const related = BLOG_POSTS.filter(p => p.id !== post.id).slice(0, 3);
+      const relatedGrid = document.getElementById('related-grid');
+      relatedGrid.innerHTML = related.map(rel => `
+        <div class="related-card">
+          <div>
+            <p class="article-category" style="margin-bottom:.5rem;">${rel.category}</p>
+            <h4>${rel.title}</h4>
+            <p>${rel.excerpt.substring(0, 95)}...</p>
+          </div>
+          <a href="${rel.slug}">Read Article →</a>
+        </div>
+      `).join('');
+    })();
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>

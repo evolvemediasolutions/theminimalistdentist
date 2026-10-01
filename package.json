@@ -1,0 +1,22 @@
+{
+  "name": "the-minimalist-dentist",
+  "version": "1.0.0",
+  "description": "A refined, minimalist web application for contemporary dental practice and patient education.",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve .",
+    "dev": "serve . -p 3000"
+  },
+  "keywords": [
+    "dentistry",
+    "minimalist",
+    "web",
+    "dental-care",
+    "patient-education"
+  ],
+  "author": "The Minimalist Dentist Team",
+  "license": "ISC",
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}

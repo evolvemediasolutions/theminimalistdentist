@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book an Appointment — The Minimalist Dentist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    :root {
+      --ivory:   #F7F3EC;
+      --orange:  #D96B3A;
+      --charcoal:#2C2C2C;
+      --muted:   #8A8478;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--ivory);
+      color: var(--charcoal);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 4rem;
+      background: var(--ivory);
+      border-bottom: 1px solid rgba(44,44,44,.08);
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.15rem;
+      letter-spacing: .08em;
+      color: var(--charcoal);
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: .78rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      text-decoration: none;
+      opacity: .7;
+      transition: opacity .2s;
+    }
+    .nav-links a:hover, .nav-links a.active { opacity: 1; }
+    .nav-links a.active { border-bottom: 1px solid var(--orange); padding-bottom: 2px; }
+
+    /* PAGE HERO */
+    .page-hero {
+      padding: 10rem 4rem 5rem;
+      border-bottom: 1px solid rgba(44,44,44,.08);
+    }
+    .eyebrow {
+      font-size: .72rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 1rem;
+    }
+    .page-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 1.1;
+      max-width: 700px;
+    }
+    .page-hero p {
+      margin-top: 1.5rem;
+      font-size: .95rem;
+      color: var(--muted);
+      max-width: 480px;
+      line-height: 1.9;
+    }
+
+    /* MAIN LAYOUT */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 0;
+      min-height: 70vh;
+    }
+
+    /* LEFT: INFO */
+    .contact-info {
+      padding: 5rem 4rem;
+      border-right: 1px solid rgba(44,44,44,.1);
+    }
+    .info-block {
+      margin-bottom: 3rem;
+    }
+    .info-label {
+      font-size: .68rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: .75rem;
+    }
+    .info-block p, .info-block address {
+      font-size: .92rem;
+      color: var(--muted);
+      line-height: 1.9;
+      font-style: normal;
+    }
+    .info-block a {
+      color: var(--charcoal);
+      text-decoration: none;
+    }
+    .info-block a:hover { color: var(--orange); }
+
+    .hours-grid {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: .4rem 1.5rem;
+      font-size: .88rem;
+      color: var(--muted);
+    }
+    .hours-grid .day { color: var(--charcoal); }
+
+    /* RIGHT: FORM */
+    .contact-form-wrap {
+      padding: 5rem 4rem;
+    }
+    .contact-form-wrap h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 2rem;
+      margin-bottom: 2.5rem;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+      margin-bottom: 1.5rem;
+    }
+    .form-group label {
+      font-size: .7rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(44,44,44,.25);
+      padding: .65rem 0;
+      font-family: 'Inter', sans-serif;
+      font-size: .92rem;
+      color: var(--charcoal);
+      outline: none;
+      transition: border-color .2s;
+      width: 100%;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-bottom-color: var(--orange);
+    }
+    .form-group select {
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%238A8478'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right .5rem center;
+    }
+    .form-group textarea {
+      resize: none;
+      min-height: 100px;
+    }
+    .btn-submit {
+      background: var(--charcoal);
+      color: var(--ivory);
+      border: none;
+      padding: .9rem 2.5rem;
+      font-family: 'Inter', sans-serif;
+      font-size: .75rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background .2s;
+      margin-top: .5rem;
+    }
+    .btn-submit:hover { background: var(--orange); }
+
+    /* MAP PLACEHOLDER */
+    .map-section {
+      background: var(--charcoal);
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .map-section iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      filter: grayscale(1) contrast(.9);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--charcoal);
+      color: rgba(247,243,236,.5);
+      padding: 3rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: .78rem;
+      letter-spacing: .05em;
+    }
+    footer .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: var(--ivory);
+      letter-spacing: .08em;
+    }
+    footer a { color: rgba(247,243,236,.5); text-decoration: none; }
+    footer a:hover { color: var(--orange); }
+
+    /* SUCCESS MESSAGE */
+    .success-msg {
+      display: none;
+      background: rgba(217,107,58,.08);
+      border-left: 3px solid var(--orange);
+      padding: 1rem 1.25rem;
+      font-size: .88rem;
+      color: var(--charcoal);
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .contact-layout { grid-template-columns: 1fr; }
+      .contact-info { border-right: none; border-bottom: 1px solid rgba(44,44,44,.1); }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 1.25rem 1.5rem; }
+      .nav-links { gap: 1.5rem; }
+      .page-hero, .contact-info, .contact-form-wrap, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <img src="images/logo-brand.jpeg" alt="The Minimalist Dentist Logo" class="nav-logo-img" />
+      <span>The Minimalist Dentist</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <p class="eyebrow">Get in Touch</p>
+    <h1>Let's take care<br />of your smile.</h1>
+    <p>Book an appointment, ask a question, or just say hello. We'll get back to you promptly.</p>
+  </section>
+
+  <!-- CONTACT LAYOUT -->
+  <div class="contact-layout">
+
+    <!-- INFO -->
+    <div class="contact-info">
+      <div class="info-block">
+        <p class="info-label">Location</p>
+        <address>
+          <!-- Replace with your actual address -->
+          12, MG Road, 2nd Floor<br />
+          Chennai, Tamil Nadu — 600 001<br />
+          India
+        </address>
+      </div>
+
+      <div class="info-block">
+        <p class="info-label">Contact</p>
+        <p>
+          <a href="tel:+919999999999">+91 99999 99999</a><br />
+          <a href="mailto:hello@themininalistdentist.in">hello@themininalistdentist.in</a><br />
+          <a href="https://wa.me/919999999999" target="_blank" rel="noopener">WhatsApp →</a>
+        </p>
+      </div>
+
+      <div class="info-block">
+        <p class="info-label">Hours</p>
+        <div class="hours-grid">
+          <span class="day">Mon – Fri</span><span>9:00 am – 7:00 pm</span>
+          <span class="day">Saturday</span><span>9:00 am – 5:00 pm</span>
+          <span class="day">Sunday</span><span>By appointment</span>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <p class="info-label">Parking</p>
+        <p>Complimentary parking available in the basement. Entry via the side lane.</p>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="contact-form-wrap">
+      <h2>Book an Appointment</h2>
+      <form id="appointmentForm" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="fname" required placeholder="Kriti" />
+          </div>
+          <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lname" required placeholder="Datta" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required placeholder="+91 98765 43210" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@email.com" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="service">Service Required</label>
+          <select id="service" name="service">
+            <option value="">Select a service</option>
+            <option>Teeth Cleaning &amp; Scaling</option>
+            <option>Teeth Whitening</option>
+            <option>Dental Implants</option>
+            <option>Invisible Aligners</option>
+            <option>Root Canal Treatment</option>
+            <option>Cosmetic Dentistry</option>
+            <option>Fillings &amp; Restorations</option>
+            <option>Gum Care</option>
+            <option>General Check-up</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="date">Preferred Date</label>
+            <input type="date" id="date" name="date" />
+          </div>
+          <div class="form-group">
+            <label for="time">Preferred Time</label>
+            <select id="time" name="time">
+              <option value="">Any time</option>
+              <option>9:00 am – 11:00 am</option>
+              <option>11:00 am – 1:00 pm</option>
+              <option>2:00 pm – 4:00 pm</option>
+              <option>4:00 pm – 7:00 pm</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="message">Anything else we should know?</label>
+          <textarea id="message" name="message" placeholder="Describe your concern, past dental history, or any questions..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Send Request</button>
+        <div class="success-msg" id="successMsg">
+          Thank you! We'll confirm your appointment within a few hours.
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- MAP — Replace src with your actual Google Maps embed -->
+  <div class="map-section">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.0!2d80.27!3d13.06!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDAzJzM2LjAiTiA4MMKwMTYnMTIuMCJF!5e0!3m2!1sen!2sin!4v1623456789"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="The Minimalist Dentist location">
+    </iframe>
+  </div>
+
+  <footer>
+    <a class="footer-logo" href="index.html">
+      <img src="images/logo-brand.jpeg" alt="The Minimalist Dentist Logo" class="footer-logo-img" />
+      <span>The Minimalist Dentist</span>
+    </a>
+    <span>© 2026 · www.themininalistdentist.in</span>
+    <div style="display:flex;gap:1.5rem;">
+      <a href="services.html">Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      // Replace this block with your actual form handler / API call
+      document.getElementById('successMsg').style.display = 'block';
+      document.getElementById('appointmentForm').reset();
+      setTimeout(() => {
+        document.getElementById('successMsg').style.display = 'none';
+      }, 5000);
+    }
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Minimalist Dentist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    :root {
+      --ivory:   #F7F3EC;
+      --orange:  #D96B3A;
+      --charcoal:#2C2C2C;
+      --muted:   #8A8478;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--ivory);
+      color: var(--charcoal);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 4rem;
+      background: var(--ivory);
+      border-bottom: 1px solid rgba(44,44,44,.08);
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.15rem;
+      letter-spacing: .08em;
+      color: var(--charcoal);
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: .78rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      text-decoration: none;
+      opacity: .7;
+      transition: opacity .2s;
+    }
+    .nav-links a:hover, .nav-links a.active { opacity: 1; }
+    .nav-links a.active { border-bottom: 1px solid var(--orange); padding-bottom: 2px; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 0 4rem;
+      padding-top: 6rem;
+    }
+    .hero-inner {
+      max-width: 640px;
+    }
+    .hero-eyebrow {
+      font-size: .72rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 1.1;
+      color: var(--charcoal);
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--orange);
+    }
+    .hero-sub {
+      font-size: .95rem;
+      color: var(--muted);
+      max-width: 440px;
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: .85rem 2rem;
+      font-size: .75rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      background: var(--charcoal);
+      color: var(--ivory);
+      border: 1px solid var(--charcoal);
+      transition: all .2s ease;
+      cursor: pointer;
+    }
+    .btn:hover { background: var(--orange); border-color: var(--orange); color: var(--ivory); }
+    .btn-outline {
+      background: transparent;
+      color: var(--charcoal);
+      border: 1px solid var(--charcoal);
+      margin-left: 0;
+    }
+    .btn-outline:hover { background: var(--charcoal); color: var(--ivory); }
+
+    /* ── PHILOSOPHY ── */
+    .section {
+      padding: 6rem 4rem;
+    }
+    .section-label {
+      font-size: .7rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 1rem;
+    }
+    .section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    .section p {
+      font-size: .95rem;
+      color: var(--muted);
+      max-width: 520px;
+      line-height: 1.9;
+    }
+
+    /* ── PILLARS ── */
+    .pillars {
+      background: var(--charcoal);
+      color: var(--ivory);
+      padding: 6rem 4rem;
+    }
+    .pillars .section-label { color: var(--orange); }
+    .pillars h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin-bottom: 3rem;
+    }
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 3rem;
+    }
+    .pillar-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      color: var(--orange);
+      margin-bottom: .75rem;
+    }
+    .pillar h3 {
+      font-size: .8rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: .75rem;
+      font-weight: 500;
+    }
+    .pillar p {
+      font-size: .88rem;
+      color: rgba(247,243,236,.55);
+      line-height: 1.8;
+    }
+
+    /* ── SERVICES TEASER ── */
+    .services-teaser {
+      padding: 6rem 4rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .services-list {
+      list-style: none;
+      margin-top: 2rem;
+    }
+    .services-list li {
+      padding: 1.1rem 0;
+      border-bottom: 1px solid rgba(44,44,44,.1);
+      font-size: .9rem;
+      letter-spacing: .04em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .services-list li span { color: var(--orange); font-size: .8rem; }
+    .services-right p {
+      font-size: .95rem;
+      color: var(--muted);
+      line-height: 1.9;
+      margin-bottom: 2rem;
+    }
+
+    /* ── CTA BAND ── */
+    .cta-band {
+      background: var(--orange);
+      padding: 5rem 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .cta-band h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      color: var(--ivory);
+      max-width: 500px;
+    }
+    .btn-light {
+      background: var(--ivory);
+      color: var(--charcoal);
+      padding: .85rem 2rem;
+      font-size: .75rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      white-space: nowrap;
+      transition: opacity .2s;
+    }
+    .btn-light:hover { opacity: .85; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--charcoal);
+      color: rgba(247,243,236,.5);
+      padding: 3rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: .78rem;
+      letter-spacing: .05em;
+    }
+    footer .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: var(--ivory);
+      letter-spacing: .08em;
+    }
+    footer a { color: rgba(247,243,236,.5); text-decoration: none; }
+    footer a:hover { color: var(--orange); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 1.25rem 1.5rem; }
+      .nav-links { gap: 1.5rem; }
+      .hero, .section, .pillars, .cta-band, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .services-teaser { grid-template-columns: 1fr; padding: 4rem 1.5rem; gap: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <img src="images/logo-brand.jpeg" alt="The Minimalist Dentist Logo" class="nav-logo-img" />
+      <span>The Minimalist Dentist</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Dentistry · Redefined</p>
+      <h1>Less fear.<br /><em>More smile.</em></h1>
+      <p class="hero-sub">
+        We believe great dental care shouldn't feel overwhelming.
+        Clean spaces, honest conversations, and treatments that respect your time — and your teeth.
+      </p>
+      <div class="hero-btns">
+        <a href="contact.html" class="btn">Book an Appointment</a>
+        <a href="services.html" class="btn btn-outline">Our Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section class="section">
+    <p class="section-label">Our Philosophy</p>
+    <h2>Dentistry without<br />the drama.</h2>
+    <p>
+      The Minimalist Dentist was founded on one simple belief: your visit should feel calm, not clinical.
+      We strip away the excess — the jargon, the anxiety, the unnecessary procedures — and focus on
+      exactly what your smile needs.
+    </p>
+  </section>
+
+  <!-- PILLARS -->
+  <section class="pillars">
+    <p class="section-label">What We Stand For</p>
+    <h2>Three things we<br />never compromise on.</h2>
+    <div class="pillars-grid">
+      <div class="pillar">
+        <div class="pillar-num">01</div>
+        <h3>Transparency</h3>
+        <p>Clear pricing, honest assessments, and zero upselling. You'll always know exactly what's happening and why.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">02</div>
+        <h3>Comfort</h3>
+        <p>From the chair to the conversation, every detail is designed to put you at ease from the moment you walk in.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">03</div>
+        <h3>Precision</h3>
+        <p>Modern techniques, careful hands, and a commitment to doing only what's needed — beautifully.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES TEASER -->
+  <section class="services-teaser">
+    <div class="services-left">
+      <p class="section-label">What We Offer</p>
+      <h2>Simple treatments.<br />Lasting results.</h2>
+      <ul class="services-list">
+        <li>Teeth Cleaning &amp; Scaling <span>→</span></li>
+        <li>Teeth Whitening <span>→</span></li>
+        <li>Dental Implants <span>→</span></li>
+        <li>Invisible Aligners <span>→</span></li>
+        <li>Root Canal Treatment <span>→</span></li>
+        <li>Cosmetic Dentistry <span>→</span></li>
+      </ul>
+    </div>
+    <div class="services-right">
+      <p>
+        Every treatment we offer is chosen for a reason. We don't carry services we don't believe in —
+        only those that deliver real, measurable outcomes for your oral health and confidence.
+      </p>
+      <a href="services.html" class="btn">View All Services</a>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <h2>Ready for a visit that actually feels good?</h2>
+    <a href="contact.html" class="btn-light">Book Appointment</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <a class="footer-logo" href="index.html">
+      <img src="images/logo-brand.jpeg" alt="The Minimalist Dentist Logo" class="footer-logo-img" />
+      <span>The Minimalist Dentist</span>
+    </a>
+    <span>© 2026 · www.themininalistdentist.in</span>
+    <div style="display:flex;gap:1.5rem;">
+      <a href="services.html">Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

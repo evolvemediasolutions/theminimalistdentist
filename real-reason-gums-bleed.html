@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The real reason your gums bleed — and when to worry — The Minimalist Dentist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    :root {
+      --ivory:   #F7F3EC;
+      --orange:  #D96B3A;
+      --charcoal:#2C2C2C;
+      --muted:   #8A8478;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--ivory);
+      color: var(--charcoal);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 4rem;
+      background: var(--ivory);
+      border-bottom: 1px solid rgba(44,44,44,.08);
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.15rem;
+      letter-spacing: .08em;
+      color: var(--charcoal);
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: .78rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      text-decoration: none;
+      opacity: .7;
+      transition: opacity .2s;
+    }
+    .nav-links a:hover, .nav-links a.active { opacity: 1; }
+    .nav-links a.active { border-bottom: 1px solid var(--orange); padding-bottom: 2px; }
+
+    /* ARTICLE HERO */
+    .article-hero {
+      padding: 9rem 4rem 3rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .75rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--orange);
+      text-decoration: none;
+      margin-bottom: 2rem;
+      font-weight: 500;
+    }
+    .back-link:hover { text-decoration: underline; }
+
+    .article-category {
+      font-size: .72rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 1rem;
+    }
+    .article-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+      line-height: 1.15;
+      color: var(--charcoal);
+      margin-bottom: 1.5rem;
+    }
+    .article-meta-bar {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(44,44,44,.1);
+      font-size: .82rem;
+      color: var(--muted);
+      flex-wrap: wrap;
+    }
+    .author-badge {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+    .author-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--charcoal);
+      color: var(--ivory);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+    }
+    .author-info strong {
+      display: block;
+      color: var(--charcoal);
+      font-weight: 500;
+    }
+    .author-info span {
+      font-size: .75rem;
+      color: var(--muted);
+    }
+
+    /* ARTWORK BANNER */
+    .article-visual-banner {
+      width: 100%;
+      height: 300px;
+      background: var(--charcoal);
+      margin: 2rem 0 3.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .article-visual-banner span {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5.5rem;
+      color: rgba(217,107,58,.4);
+    }
+
+    /* MAIN CONTENT */
+    .article-body-wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 4rem 6rem;
+    }
+    .article-content {
+      font-size: 1rem;
+      color: #333;
+      line-height: 1.9;
+    }
+    .article-content .lead {
+      font-size: 1.18rem;
+      line-height: 1.8;
+      color: var(--charcoal);
+      font-weight: 300;
+      margin-bottom: 2rem;
+    }
+    .article-content h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.9rem;
+      margin: 2.5rem 0 1rem;
+      color: var(--charcoal);
+      line-height: 1.25;
+    }
+    .article-content p { margin-bottom: 1.5rem; }
+    .article-content ul, .article-content ol { margin: 1.5rem 0 1.5rem 1.5rem; }
+    .article-content li { margin-bottom: .6rem; }
+    .takeaway-box {
+      background: #F0EBE1;
+      border: 1px solid rgba(44,44,44,.08);
+      border-left: 3px solid var(--orange);
+      padding: 1.8rem;
+      margin: 2rem 0 2.5rem;
+    }
+    .takeaway-box h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      color: var(--charcoal);
+      margin-bottom: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .takeaway-box ul { margin: 0 0 0 1.2rem; }
+
+    .article-cta {
+      background: var(--charcoal);
+      color: var(--ivory);
+      padding: 2.5rem;
+      margin-top: 4rem;
+    }
+    .article-cta h3 {
+      color: var(--ivory);
+      margin-top: 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 300;
+      margin-bottom: .75rem;
+    }
+    .article-cta p {
+      color: rgba(247,243,236,.65);
+      font-size: .9rem;
+      margin-bottom: 1.5rem;
+    }
+    .article-cta .btn {
+      background: var(--orange);
+      color: var(--ivory);
+      padding: .75rem 1.75rem;
+      font-size: .72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .author-footer-card {
+      margin-top: 4rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid rgba(44,44,44,.1);
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    /* RELATED POSTS SECTION */
+    .related-section {
+      background: #F0EBE1;
+      padding: 5rem 4rem;
+      border-top: 1px solid rgba(44,44,44,.08);
+    }
+    .related-section h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.8rem;
+      margin-bottom: 2.5rem;
+    }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .related-card {
+      background: var(--ivory);
+      padding: 2rem;
+      border: 1px solid rgba(44,44,44,.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .related-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      margin-bottom: .75rem;
+      line-height: 1.3;
+    }
+    .related-card p {
+      font-size: .85rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
+    }
+    .related-card a {
+      color: var(--orange);
+      text-decoration: none;
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    /* NEWSLETTER */
+    .newsletter {
+      background: var(--charcoal);
+      color: var(--ivory);
+      padding: 5rem 4rem;
+      display: flex;
+      gap: 4rem;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .newsletter-left h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      margin-bottom: .75rem;
+    }
+    .newsletter-left p {
+      font-size: .88rem;
+      color: rgba(247,243,236,.5);
+      max-width: 360px;
+      line-height: 1.8;
+    }
+    .newsletter-form {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+    }
+    .newsletter-form input {
+      background: rgba(247,243,236,.1);
+      border: 1px solid rgba(247,243,236,.15);
+      padding: .8rem 1.25rem;
+      font-family: 'Inter', sans-serif;
+      font-size: .88rem;
+      color: var(--ivory);
+      outline: none;
+      width: 260px;
+    }
+    .newsletter-form button {
+      background: var(--orange);
+      color: var(--ivory);
+      border: none;
+      padding: .8rem 1.5rem;
+      font-family: 'Inter', sans-serif;
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--charcoal);
+      color: rgba(247,243,236,.5);
+      padding: 3rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: .78rem;
+      border-top: 1px solid rgba(247,243,236,.05);
+    }
+    footer .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: var(--ivory);
+    }
+    footer a { color: rgba(247,243,236,.5); text-decoration: none; }
+    footer a:hover { color: var(--orange); }
+
+    @media (max-width: 768px) {
+      nav { padding: 1.25rem 1.5rem; }
+      .article-hero, .article-body-wrapper, .related-section, .newsletter, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .article-hero { padding-top: 7rem; }
+      .newsletter { flex-direction: column; gap: 2rem; }
+      .newsletter-form input { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <img src="images/logo-brand.jpeg" alt="The Minimalist Dentist Logo" class="nav-logo-img" />
+      <span>The Minimalist Dentist</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <article>
+    <div class="article-hero">
+      <a href="blog.html" class="back-link">← Back to All Articles</a>
+      <p class="article-category">Oral Health</p>
+      <h1>The real reason your gums bleed — and when to worry</h1>
+      <div class="article-meta-bar">
+        <div class="author-badge">
+          <div class="author-avatar">A</div>
+          <div class="author-info">
+            <strong>Dr. Ananya Sharma, MDS</strong>
+            <span>Lead Practitioner & Founder</span>
+          </div>
+        </div>
+        <span>April 22, 2026</span>
+        <span>·</span>
+        <span>4 min read</span>
+      </div>
+      <div class="article-visual-banner"><span>🩸</span></div>
+    </div>
+
+    <div class="article-body-wrapper">
+      <div class="article-content">
+        <p class="lead">If your hands bled whenever you washed them, you would seek medical attention immediately. Yet, many people accept bleeding gums as a normal part of brushing or flossing. It is not.</p>
+
+        <div class="takeaway-box">
+          <h4>Key Takeaways</h4>
+          <ul>
+            <li><strong>Gingivitis indicator:</strong> Bleeding is the earliest signal of gum inflammation caused by bacterial buildup.</li>
+            <li><strong>Flossing onset:</strong> Gums may bleed initially when starting flossing, but should resolve within 7-10 days.</li>
+            <li><strong>Reversibility:</strong> Early gum inflammation is 100% reversible with proper dental cleaning and hygiene.</li>
+          </ul>
+        </div>
+
+        <h2>Why Do Gums Bleed?</h2>
+        <p>When bacterial plaque remains along the gum line, it releases toxins that irritate and inflame the delicate gingival tissues. Your immune system responds by sending extra blood to the area to fight the bacteria, making the blood vessels enlarged, fragile, and prone to bleeding upon light contact.</p>
+
+        <h2>Common Causes Beyond Brushing</h2>
+        <ul>
+          <li><strong>Inconsistent Flossing:</strong> If you only floss occasionally, your gums remain inflamed and bleed when agitated.</li>
+          <li><strong>Vitamin Deficiencies:</strong> Low levels of Vitamin C or Vitamin K weaken vascular structure.</li>
+          <li><strong>Hormonal Fluctuations:</strong> Pregnancy, puberty, or cycle changes increase sensitivity to plaque.</li>
+          <li><strong>Ill-Fitting Restorations:</strong> Overhanging crowns or fillings can trap bacteria in localized areas.</li>
+        </ul>
+
+        <h2>When Should You Worry?</h2>
+        <p>Spontaneous bleeding, persistent bad breath, loose teeth, or gums receding away from teeth indicate advanced periodontitis, which can lead to bone loss around the teeth. Early intervention prevents permanent tissue damage.</p>
+
+        <div class="article-cta">
+          <h3>Noticed bleeding during your routine?</h3>
+          <p>Schedule a quick, pain-free periodontal evaluation with our team today.</p>
+          <a href="contact.html" class="btn">Schedule Gum Evaluation</a>
+        </div>
+      </div>
+
+      <div class="author-footer-card">
+        <div class="author-avatar" style="width:50px;height:50px;font-size:1.4rem;">A</div>
+        <div>
+          <strong style="color:var(--charcoal);font-size:1rem;">Dr. Ananya Sharma, MDS</strong>
+          <p style="font-size:.82rem;color:var(--muted);margin-top:.2rem;">Founding Dentist at The Minimalist Dentist. Passionate about evidence-based oral care, patient comfort, and clear communication.</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- RELATED ARTICLES -->
+  <section class="related-section">
+    <h3>More from The Journal</h3>
+    <div class="related-grid">
+      <div class="related-card">
+        <div>
+          <p class="article-category">Prevention & Technique</p>
+          <h4>Why most people brush wrong — and what actually works</h4>
+          <p>You've been doing it your whole life, but chances are your technique has a flaw or two...</p>
+        </div>
+        <a href="why-most-people-brush-wrong.html">Read Article →</a>
+      </div>
+
+      <div class="related-card">
+        <div>
+          <p class="article-category">Cosmetic Dentistry</p>
+          <h4>Whitening strips vs. in-clinic whitening: an honest comparison</h4>
+          <p>We're not here to sell you anything. Here's a straightforward look at what actually works...</p>
+        </div>
+        <a href="whitening-strips-vs-in-clinic-whitening.html">Read Article →</a>
+      </div>
+
+      <div class="related-card">
+        <div>
+          <p class="article-category">Nutrition & Wellness</p>
+          <h4>10 foods that quietly damage your enamel</h4>
+          <p>Some are obvious. Many will surprise you. A practical guide to what to moderate for healthier teeth...</p>
+        </div>
+        <a href="10-foods-that-quietly-damage-your-enamel.html">Read Article →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <div class="newsletter-left">
+      <p class="article-category">Stay Informed</p>
+      <h2>Oral health insights,<br />once a month.</h2>
+      <p>No spam. No scare tactics. Just one well-researched email about your teeth and overall wellness.</p>
+    </div>
+    <form class="newsletter-form" onsubmit="event.preventDefault();">
+      <input type="email" placeholder="your@email.com" />
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <footer>
+    <a class="footer-logo" href="index.html">
+      <img src="images/logo-brand.jpeg" alt="The Minimalist Dentist Logo" class="footer-logo-img" />
+      <span>The Minimalist Dentist</span>
+    </a>
+    <span>© 2026 · www.themininalistdentist.in</span>
+    <div style="display:flex;gap:1.5rem;">
+      <a href="services.html">Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

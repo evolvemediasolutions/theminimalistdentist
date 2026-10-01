@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — The Minimalist Dentist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    :root {
+      --ivory:   #F7F3EC;
+      --orange:  #D96B3A;
+      --charcoal:#2C2C2C;
+      --muted:   #8A8478;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--ivory);
+      color: var(--charcoal);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 4rem;
+      background: var(--ivory);
+      border-bottom: 1px solid rgba(44,44,44,.08);
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.15rem;
+      letter-spacing: .08em;
+      color: var(--charcoal);
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: .78rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      text-decoration: none;
+      opacity: .7;
+      transition: opacity .2s;
+    }
+    .nav-links a:hover, .nav-links a.active { opacity: 1; }
+    .nav-links a.active { border-bottom: 1px solid var(--orange); padding-bottom: 2px; }
+
+    /* PAGE HERO */
+    .page-hero {
+      padding: 10rem 4rem 5rem;
+      border-bottom: 1px solid rgba(44,44,44,.08);
+    }
+    .page-hero .eyebrow {
+      font-size: .72rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 1rem;
+    }
+    .page-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 1.1;
+      max-width: 700px;
+    }
+    .page-hero p {
+      margin-top: 1.5rem;
+      font-size: .95rem;
+      color: var(--muted);
+      max-width: 480px;
+      line-height: 1.9;
+    }
+
+    /* SERVICES GRID */
+    .services-section {
+      padding: 5rem 4rem;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1px;
+      background: rgba(44,44,44,.1);
+      border: 1px solid rgba(44,44,44,.1);
+      margin-top: 3rem;
+    }
+    .service-card {
+      background: var(--ivory);
+      padding: 2.5rem;
+      transition: background .2s;
+    }
+    .service-card:hover { background: #F0EBE1; }
+    .service-icon {
+      font-size: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+    .service-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.4rem;
+      margin-bottom: .75rem;
+    }
+    .service-card p {
+      font-size: .88rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+    .service-link {
+      font-size: .72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--orange);
+      text-decoration: none;
+    }
+    .service-link:hover { text-decoration: underline; }
+
+    /* PROCESS */
+    .process {
+      background: var(--charcoal);
+      color: var(--ivory);
+      padding: 6rem 4rem;
+    }
+    .process .eyebrow {
+      font-size: .72rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 1rem;
+    }
+    .process h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin-bottom: 3rem;
+    }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2.5rem;
+    }
+    .step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      color: var(--orange);
+      margin-bottom: .5rem;
+    }
+    .step h4 {
+      font-size: .8rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: .6rem;
+    }
+    .step p {
+      font-size: .85rem;
+      color: rgba(247,243,236,.5);
+      line-height: 1.8;
+    }
+
+    /* CTA */
+    .cta-band {
+      background: var(--orange);
+      padding: 5rem 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .cta-band h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      color: var(--ivory);
+      max-width: 500px;
+    }
+    .btn-light {
+      background: var(--ivory);
+      color: var(--charcoal);
+      padding: .85rem 2rem;
+      font-size: .75rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      white-space: nowrap;
+      transition: opacity .2s;
+    }
+    .btn-light:hover { opacity: .85; }
+
+    /* FOOTER */
+    footer {
+      background: var(--charcoal);
+      color: rgba(247,243,236,.5);
+      padding: 3rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: .78rem;
+      letter-spacing: .05em;
+    }
+    footer .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: var(--ivory);
+      letter-spacing: .08em;
+    }
+    footer a { color: rgba(247,243,236,.5); text-decoration: none; }
+    footer a:hover { color: var(--orange); }
+
+    @media (max-width: 768px) {
+      nav { padding: 1.25rem 1.5rem; }
+      .nav-links { gap: 1.5rem; }
+      .page-hero, .services-section, .process, .cta-band, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <img src="images/logo-brand.jpeg" alt="The Minimalist Dentist Logo" class="nav-logo-img" />
+      <span>The Minimalist Dentist</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <p class="eyebrow">What We Offer</p>
+    <h1>Treatments designed<br />around you.</h1>
+    <p>
+      Every service we provide is carefully chosen — nothing superfluous, nothing rushed.
+      Just the care your teeth actually need.
+    </p>
+  </section>
+
+  <!-- SERVICES GRID -->
+  <section class="services-section">
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">◌</div>
+        <h3>Teeth Cleaning &amp; Scaling</h3>
+        <p>Professional removal of plaque and tartar buildup to prevent gum disease and maintain optimal oral health.</p>
+        <a class="service-link" href="contact.html">Book Now →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">◎</div>
+        <h3>Teeth Whitening</h3>
+        <p>In-clinic whitening using safe, effective agents that brighten your smile by several shades in a single session.</p>
+        <a class="service-link" href="contact.html">Book Now →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">◈</div>
+        <h3>Dental Implants</h3>
+        <p>A permanent, natural-looking solution for missing teeth. Titanium roots that fuse with your jaw for lifelong stability.</p>
+        <a class="service-link" href="contact.html">Book Now →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">◻</div>
+        <h3>Invisible Aligners</h3>
+        <p>Discreet, removable aligners custom-made to straighten your teeth without the look or discomfort of traditional braces.</p>
+        <a class="service-link" href="contact.html">Book Now →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">◆</div>
+        <h3>Root Canal Treatment</h3>
+        <p>Gentle, modern endodontic care that saves infected teeth, relieves pain, and restores full function — without the dread.</p>
+        <a class="service-link" href="contact.html">Book Now →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">◑</div>
+        <h3>Cosmetic Dentistry</h3>
+        <p>Veneers, bonding, and smile makeovers crafted with precision to enhance your natural aesthetics.</p>
+        <a class="service-link" href="contact.html">Book Now →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">◒</div>
+        <h3>Fillings &amp; Restorations</h3>
+        <p>Tooth-colored composite fillings that blend seamlessly, restoring strength and appearance without any metallic compromise.</p>
+        <a class="service-link" href="contact.html">Book Now →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">◍</div>
+        <h3>Gum Care</h3>
+        <p>Early detection and treatment of gum disease to protect the foundation your teeth rely on — often overlooked, always important.</p>
+        <a class="service-link" href="contact.html">Book Now →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">◇</div>
+        <h3>Dental X-Rays &amp; Diagnosis</h3>
+        <p>Accurate, low-dose digital imaging to detect issues early, so we treat less and prevent more.</p>
+        <a class="service-link" href="contact.html">Book Now →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process">
+    <p class="eyebrow">Your Visit</p>
+    <h2>What to expect<br />when you come in.</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h4>Book</h4>
+        <p>Choose a time that works for you — online, by phone, or via WhatsApp. No waiting rooms, no surprises.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h4>Consult</h4>
+        <p>We listen first. A thorough check-up, honest findings, and a clear explanation of your options.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h4>Treat</h4>
+        <p>Only what's needed, done with care. We explain every step before we take it.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h4>Follow Up</h4>
+        <p>We check in. Your long-term health matters more to us than a single appointment.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <h2>Not sure where to start? Let's talk.</h2>
+    <a href="contact.html" class="btn-light">Book a Consultation</a>
+  </section>
+
+  <footer>
+    <a class="footer-logo" href="index.html">
+      <img src="images/logo-brand.jpeg" alt="The Minimalist Dentist Logo" class="footer-logo-img" />
+      <span>The Minimalist Dentist</span>
+    </a>
+    <span>© 2026 · www.themininalistdentist.in</span>
+    <div style="display:flex;gap:1.5rem;">
+      <a href="services.html">Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
