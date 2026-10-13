@@ -1,0 +1,16 @@
+{
+  "name": "The Minimalist Dentist",
+  "short_name": "Minimalist Dentist",
+  "description": "Refined, gentle dental care in Abhiramapuram, Chennai. Modern treatments, transparency, and calm dentistry.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F7F3EC",
+  "theme_color": "#1F2421",
+  "icons": [
+    {
+      "src": "images/the-minimalist-dentist-original-4000px.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

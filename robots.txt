@@ -1,0 +1,16 @@
+# ==========================================
+# Robots.txt — The Minimalist Dentist
+# https://theminimalistdentist.in
+# ==========================================
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /*.json$
+
+# Prevent crawler access to sensitive / dev files
+Disallow: /.env*
+Disallow: /server.js
+
+# Sitemap Location
+Sitemap: https://theminimalistdentist.in/sitemap.xml

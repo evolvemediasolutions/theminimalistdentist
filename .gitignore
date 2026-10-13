@@ -15,3 +15,8 @@ Thumbs.db
 dist/
 build/
 .cache/
+
+# Environment Variables
+.env
+.env.local
+.env.*.local

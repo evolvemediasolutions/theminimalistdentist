@@ -36,12 +36,27 @@ Make sure Node.js is installed on your system, then run:
 ```bash
 npm start
 ```
-*Or using `npx`:*
+*Or during development:*
 ```bash
-npx serve .
+npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your web browser.
+This starts the unified web server with static assets and the active Resend appointment endpoint at [http://localhost:3000](http://localhost:3000).
+
+---
+
+## 📧 Appointment Email Setup (Resend)
+
+Appointment submissions on [`contact.html`](file:///e:/EVOLVE WEBSITES/theminimalistdentist/contact.html) are delivered directly to **`contact@theminimalistdentist.in`** via [Resend](https://resend.com).
+
+1. Obtain a free API key at [resend.com/api-keys](https://resend.com/api-keys).
+2. Open or create [`.env`](file:///e:/EVOLVE WEBSITES/theminimalistdentist/.env) in the project root:
+   ```env
+   RESEND_API_KEY=re_your_api_key_here
+   RESEND_FROM="The Minimalist Dentist <onboarding@resend.dev>"
+   RESEND_TO="contact@theminimalistdentist.in"
+   ```
+3. When deployed to **Vercel** or **Netlify**, add `RESEND_API_KEY` to your hosting project's Environment Variables. The included [`api/send.js`](file:///e:/EVOLVE WEBSITES/theminimalistdentist/api/send.js) serves as a serverless function automatically.
 
 ### Method 2: Live Server (VS Code / Antigravity IDE)
 1. Right-click [`index.html`](file:///e:/EVOLVE WEBSITES/theminimalistdentist/index.html) in your editor.

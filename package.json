@@ -4,8 +4,9 @@
   "description": "A refined, minimalist web application for contemporary dental practice and patient education.",
   "main": "index.html",
   "scripts": {
-    "start": "serve .",
-    "dev": "serve . -p 3000"
+    "start": "node server.js",
+    "dev": "node server.js",
+    "serve": "serve ."
   },
   "keywords": [
     "dentistry",

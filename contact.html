@@ -3,11 +3,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Book an Appointment — The Minimalist Dentist</title>
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Book an Appointment | The Minimalist Dentist Chennai</title>
+  <meta name="title" content="Book an Appointment | The Minimalist Dentist Chennai" />
+  <meta name="description" content="Schedule your dental consultation at The Minimalist Dentist in Abhiramapuram, Chennai. Convenient hours, complimentary parking, transparent care &amp; prompt confirmation." />
+  <meta name="keywords" content="book dentist Chennai, dental clinic Abhiramapuram, schedule dentist appointment Chennai, dental consultation Chennai, dentist near me" />
+  <meta name="author" content="The Minimalist Dentist" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <link rel="canonical" href="https://theminimalistdentist.in/contact.html" />
+
+  <!-- Geo & Local SEO Tags -->
+  <meta name="geo.region" content="IN-TN" />
+  <meta name="geo.placename" content="Chennai" />
+  <meta name="geo.position" content="13.0336;80.2520" />
+  <meta name="ICBM" content="13.0336, 80.2520" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://theminimalistdentist.in/contact.html" />
+  <meta property="og:title" content="Book an Appointment | The Minimalist Dentist Chennai" />
+  <meta property="og:description" content="Book your visit with The Minimalist Dentist in Abhiramapuram, Chennai. Thoughtful, calm, and patient-first oral healthcare." />
+  <meta property="og:image" content="https://theminimalistdentist.in/images/the-minimalist-dentist-original-4000px.png" />
+  <meta property="og:site_name" content="The Minimalist Dentist" />
+  <meta property="og:locale" content="en_IN" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://theminimalistdentist.in/contact.html" />
+  <meta property="twitter:title" content="Book an Appointment | The Minimalist Dentist Chennai" />
+  <meta property="twitter:description" content="Book your visit with The Minimalist Dentist in Abhiramapuram, Chennai. Transparent, calm dental care." />
+  <meta property="twitter:image" content="https://theminimalistdentist.in/images/the-minimalist-dentist-original-4000px.png" />
+
+  <!-- Favicon & Mobile Web -->
+  <link rel="icon" type="image/png" href="images/the-minimalist-dentist-original-4000px.png" />
+  <link rel="apple-touch-icon" href="images/the-minimalist-dentist-original-4000px.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <meta name="theme-color" content="#1F2421" />
+
+  <!-- Fonts & Styles -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- JSON-LD Structured Data: ContactPage & Dentist Location -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Book an Appointment - The Minimalist Dentist",
+    "url": "https://theminimalistdentist.in/contact.html",
+    "mainEntity": {
+      "@type": "Dentist",
+      "name": "The Minimalist Dentist",
+      "image": "https://theminimalistdentist.in/images/the-minimalist-dentist-original-4000px.png",
+      "telephone": "+91-9150007144",
+      "email": "contact@theminimalistdentist.in",
+      "hasMap": "https://maps.google.com/maps?q=8/38,+Prithvi+Avenue,+2nd+Street,+Abhiramapuram,+Chennai+-+600018",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "8/38, Prithvi Avenue, 2nd Street",
+        "addressLocality": "Abhiramapuram, Chennai",
+        "addressRegion": "Tamil Nadu",
+        "postalCode": "600018",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 13.0336,
+        "longitude": 80.2520
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "10:00",
+          "closes": "19:00"
+        }
+      ]
+    }
+  }
+  </script>
   <style>
     :root {
       --ivory:   #F7F3EC;
@@ -206,6 +283,11 @@
       margin-top: .5rem;
     }
     .btn-submit:hover { background: var(--orange); }
+    .btn-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      background: #7a756f;
+    }
 
     /* MAP PLACEHOLDER */
     .map-section {
@@ -244,15 +326,26 @@
     footer a { color: rgba(247,243,236,.5); text-decoration: none; }
     footer a:hover { color: var(--orange); }
 
-    /* SUCCESS MESSAGE */
+    /* SUCCESS & ERROR MESSAGES */
     .success-msg {
       display: none;
-      background: rgba(217,107,58,.08);
-      border-left: 3px solid var(--orange);
+      background: rgba(46, 125, 50, .08);
+      border-left: 3px solid #2e7d32;
       padding: 1rem 1.25rem;
       font-size: .88rem;
       color: var(--charcoal);
       margin-top: 1rem;
+      line-height: 1.5;
+    }
+    .error-msg {
+      display: none;
+      background: rgba(198, 40, 40, .08);
+      border-left: 3px solid #c62828;
+      padding: 1rem 1.25rem;
+      font-size: .88rem;
+      color: var(--charcoal);
+      margin-top: 1rem;
+      line-height: 1.5;
     }
 
     @media (max-width: 900px) {
@@ -271,7 +364,7 @@
 
   <nav>
     <a class="nav-logo" href="index.html">
-      <img src="images/logo-brand.jpeg" alt="The Minimalist Dentist Logo" class="nav-logo-img" />
+      <img src="images/the-minimalist-dentist-original-4000px.png" alt="The Minimalist Dentist Logo" class="nav-logo-img" />
       <span>The Minimalist Dentist</span>
     </a>
     <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -302,34 +395,33 @@
       <div class="info-block">
         <p class="info-label">Location</p>
         <address>
-          <!-- Replace with your actual address -->
-          12, MG Road, 2nd Floor<br />
-          Chennai, Tamil Nadu — 600 001<br />
-          India
+          <a href="https://www.google.com/maps/search/8%2F38,+Prithvi+Avenue?entry=gmail&source=g" target="_blank" rel="noopener" style="color:var(--charcoal); font-weight:500; text-decoration:underline;">8/38, Prithvi Avenue</a>, 2nd Street<br />
+          Abhiramapuram, Chennai — 600018<br />
+          Tamil Nadu, India
         </address>
       </div>
 
       <div class="info-block">
-        <p class="info-label">Contact</p>
+        <p class="info-label">Contact Number</p>
         <p>
-          <a href="tel:+919999999999">+91 99999 99999</a><br />
-          <a href="mailto:hello@themininalistdentist.in">hello@themininalistdentist.in</a><br />
-          <a href="https://wa.me/919999999999" target="_blank" rel="noopener">WhatsApp →</a>
+          <a href="tel:+919150007144" style="font-weight:600; font-size:1.05rem;">+91-9150007144</a><br />
+          <a href="mailto:contact@theminimalistdentist.in">contact@theminimalistdentist.in</a><br />
+          <a href="https://wa.me/919150007144" target="_blank" rel="noopener" style="color:var(--orange); font-weight:500;">WhatsApp Us →</a>
         </p>
       </div>
 
       <div class="info-block">
-        <p class="info-label">Hours</p>
+        <p class="info-label">Appointment Hours</p>
         <div class="hours-grid">
-          <span class="day">Mon – Fri</span><span>9:00 am – 7:00 pm</span>
-          <span class="day">Saturday</span><span>9:00 am – 5:00 pm</span>
-          <span class="day">Sunday</span><span>By appointment</span>
+          <span class="day">Mon – Sat</span><span>10:00 am – 7:00 pm</span>
+          <span class="day">Sunday</span><span>Holiday</span>
         </div>
+        <p style="font-size: .8rem; color: var(--muted); margin-top: .5rem; font-style: italic;">* By appointment only</p>
       </div>
 
       <div class="info-block">
         <p class="info-label">Parking</p>
-        <p>Complimentary parking available in the basement. Entry via the side lane.</p>
+        <p>Complimentary parking available for patients.</p>
       </div>
     </div>
 
@@ -393,19 +485,18 @@
           <label for="message">Anything else we should know?</label>
           <textarea id="message" name="message" placeholder="Describe your concern, past dental history, or any questions..."></textarea>
         </div>
-        <button type="submit" class="btn-submit">Send Request</button>
-        <div class="success-msg" id="successMsg">
-          Thank you! We'll confirm your appointment within a few hours.
-        </div>
+        <button type="submit" class="btn-submit" id="submitBtn">Send Request</button>
+        <div class="success-msg" id="successMsg"></div>
+        <div class="error-msg" id="errorMsg"></div>
       </form>
     </div>
 
   </div>
 
-  <!-- MAP — Replace src with your actual Google Maps embed -->
+  <!-- MAP -->
   <div class="map-section">
     <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.0!2d80.27!3d13.06!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDAzJzM2LjAiTiA4MMKwMTYnMTIuMCJF!5e0!3m2!1sen!2sin!4v1623456789"
+      src="https://maps.google.com/maps?q=8/38,+Prithvi+Avenue,+2nd+Street,+Abhiramapuram,+Chennai+-+600018&t=&z=15&ie=UTF8&iwloc=&output=embed"
       allowfullscreen=""
       loading="lazy"
       referrerpolicy="no-referrer-when-downgrade"
@@ -415,10 +506,10 @@
 
   <footer>
     <a class="footer-logo" href="index.html">
-      <img src="images/logo-brand.jpeg" alt="The Minimalist Dentist Logo" class="footer-logo-img" />
+      <img src="images/the-minimalist-dentist-original-4000px.png" alt="The Minimalist Dentist Logo" class="footer-logo-img" />
       <span>The Minimalist Dentist</span>
     </a>
-    <span>© 2026 · www.themininalistdentist.in</span>
+    <span>© 2026 · www.theminimalistdentist.in</span>
     <div style="display:flex;gap:1.5rem;">
       <a href="services.html">Services</a>
       <a href="blog.html">Blog</a>
@@ -427,14 +518,68 @@
   </footer>
 
   <script>
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
       e.preventDefault();
-      // Replace this block with your actual form handler / API call
-      document.getElementById('successMsg').style.display = 'block';
-      document.getElementById('appointmentForm').reset();
-      setTimeout(() => {
-        document.getElementById('successMsg').style.display = 'none';
-      }, 5000);
+
+      const form = document.getElementById('appointmentForm');
+      const submitBtn = document.getElementById('submitBtn');
+      const successMsg = document.getElementById('successMsg');
+      const errorMsg = document.getElementById('errorMsg');
+
+      // Reset feedback messages
+      successMsg.style.display = 'none';
+      errorMsg.style.display = 'none';
+
+      // Gather form values
+      const formData = {
+        fname: form.fname.value.trim(),
+        lname: form.lname.value.trim(),
+        phone: form.phone.value.trim(),
+        email: form.email.value.trim(),
+        service: form.service.value,
+        date: form.date.value,
+        time: form.time.value,
+        message: form.message.value.trim(),
+      };
+
+      if (!formData.fname || !formData.phone) {
+        errorMsg.innerHTML = '<strong>Missing Information:</strong> Please provide your name and phone number.';
+        errorMsg.style.display = 'block';
+        return;
+      }
+
+      const originalBtnText = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending Request...';
+
+      try {
+        const response = await fetch('/api/send', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+
+        const result = await response.json().catch(() => null);
+
+        if (response.ok && result && result.success) {
+          successMsg.innerHTML = `<strong>Appointment Request Received!</strong><br />Thank you, ${formData.fname}. We have sent your details to <strong>contact@theminimalistdentist.in</strong>. Our team will contact you at <strong>${formData.phone}</strong> shortly to confirm your visit.`;
+          successMsg.style.display = 'block';
+          form.reset();
+        } else {
+          const errMsg = result && result.error ? result.error : 'Could not send appointment request at this moment.';
+          errorMsg.innerHTML = `<strong>Error:</strong> ${errMsg}<br /><span style="display:inline-block; margin-top:6px; font-size:0.84rem;">You can also contact us immediately at <a href="tel:+919150007144" style="color:inherit; font-weight:600; text-decoration:underline;">+91-9150007144</a> or message us on <a href="https://wa.me/919150007144" target="_blank" rel="noopener" style="color:var(--orange); font-weight:600;">WhatsApp</a>.</span>`;
+          errorMsg.style.display = 'block';
+        }
+      } catch (err) {
+        console.error('[Booking Submit Error]', err);
+        errorMsg.innerHTML = `<strong>Service Unavailable:</strong> Unable to connect to the email API.<br /><span style="display:inline-block; margin-top:6px; font-size:0.84rem;">If running locally, start with <code>npm run dev</code> or <code>node server.js</code>. You can also reach us directly at <a href="tel:+919150007144" style="color:inherit; font-weight:600; text-decoration:underline;">+91-9150007144</a> or <a href="mailto:contact@theminimalistdentist.in" style="color:inherit; font-weight:600; text-decoration:underline;">contact@theminimalistdentist.in</a>.</span>`;
+        errorMsg.style.display = 'block';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalBtnText;
+      }
     }
   </script>
 
