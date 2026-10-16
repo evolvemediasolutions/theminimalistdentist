@@ -124,14 +124,39 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
-  // 2. Static Files
+  // 2. Static Files & Routing
   if (req.method !== 'GET' && req.method !== 'HEAD') {
     res.writeHead(405, { 'Content-Type': 'text/plain' });
     res.end('Method Not Allowed');
     return;
   }
 
-  let filePath = path.join(ROOT_DIR, pathname);
+  // Legacy redirects for article URLs
+  const legacyArticleRedirects = {
+    '/why-most-people-brush-wrong.html': '/blog/why-most-people-brush-wrong',
+    '/real-reason-gums-bleed.html': '/blog/real-reason-gums-bleed',
+    '/whitening-strips-vs-in-clinic-whitening.html': '/blog/whitening-strips-vs-in-clinic-whitening',
+    '/dental-anxiety-is-real.html': '/blog/dental-anxiety-is-real',
+    '/10-foods-that-quietly-damage-your-enamel.html': '/blog/10-foods-that-quietly-damage-your-enamel',
+    '/dental-implants-guide-for-first-timers.html': '/blog/dental-implants-guide-for-first-timers',
+    '/when-should-children-get-first-check-up.html': '/blog/when-should-children-get-first-check-up',
+  };
+
+  if (legacyArticleRedirects[pathname]) {
+    res.writeHead(301, { Location: legacyArticleRedirects[pathname] });
+    res.end();
+    return;
+  }
+
+  // Dynamic Blog Routing: /blog/:slug -> blog-post.html, /blog -> blog.html
+  let filePath;
+  if (pathname.startsWith('/blog/') && pathname !== '/blog/' && !path.extname(pathname)) {
+    filePath = path.join(ROOT_DIR, 'blog-post.html');
+  } else if (pathname === '/blog' || pathname === '/blog/') {
+    filePath = path.join(ROOT_DIR, 'blog.html');
+  } else {
+    filePath = path.join(ROOT_DIR, pathname);
+  }
 
   // Security: prevent directory traversal
   if (!filePath.startsWith(ROOT_DIR)) {

@@ -6,13 +6,13 @@
 
 (function () {
   // Determine current active page
-  const path = window.location.pathname.split('/').pop() || 'index.html';
+  const path = window.location.pathname.toLowerCase();
 
   let activePage = 'home';
   if (path.includes('services')) activePage = 'services';
   else if (path.includes('blog')) activePage = 'blog';
   else if (path.includes('contact')) activePage = 'contact';
-  else if (path === '' || path === 'index.html') activePage = 'home';
+  else if (path === '/' || path === '' || path.includes('index')) activePage = 'home';
 
   // Global Header Component
   function renderHeader() {
@@ -20,8 +20,8 @@
     if (!navElement) return;
 
     navElement.innerHTML = `
-      <a class="nav-logo" href="index.html" aria-label="The Minimalist Dentist Home">
-        <img src="images/the-minimalist-dentist-original-4000px.png" alt="The Minimalist Dentist" class="nav-logo-img" />
+      <a class="nav-logo" href="/" aria-label="The Minimalist Dentist Home">
+        <img src="/images/the-minimalist-dentist-original-4000px.png" alt="The Minimalist Dentist" class="nav-logo-img" />
       </a>
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span>
@@ -29,10 +29,10 @@
         <span></span>
       </button>
       <ul class="nav-links">
-        <li><a href="index.html" class="${activePage === 'home' ? 'active' : ''}">Home</a></li>
-        <li><a href="services.html" class="${activePage === 'services' ? 'active' : ''}">Services</a></li>
-        <li><a href="blog.html" class="${activePage === 'blog' ? 'active' : ''}">Blog</a></li>
-        <li><a href="contact.html" class="${activePage === 'contact' ? 'active' : ''}">Contact</a></li>
+        <li><a href="/" class="${activePage === 'home' ? 'active' : ''}">Home</a></li>
+        <li><a href="/services.html" class="${activePage === 'services' ? 'active' : ''}">Services</a></li>
+        <li><a href="/blog.html" class="${activePage === 'blog' ? 'active' : ''}">Blog</a></li>
+        <li><a href="/contact.html" class="${activePage === 'contact' ? 'active' : ''}">Contact</a></li>
       </ul>
     `;
   }
@@ -45,8 +45,8 @@
     footerElement.innerHTML = `
       <div class="footer-container" style="display:flex; flex-wrap:wrap; justify-content:space-between; width:100%; gap:2rem; align-items:flex-start;">
         <div class="footer-brand" style="max-width:300px;">
-          <a class="footer-logo" href="index.html" aria-label="The Minimalist Dentist Home">
-            <img src="images/the-minimalist-dentist-original-4000px.png" alt="The Minimalist Dentist" class="footer-logo-img" />
+          <a class="footer-logo" href="/" aria-label="The Minimalist Dentist Home">
+            <img src="/images/the-minimalist-dentist-original-4000px.png" alt="The Minimalist Dentist" class="footer-logo-img" />
           </a>
           <p style="font-size:0.82rem; color:rgba(247,243,236,0.6); margin-top:0.75rem; line-height:1.6;">
             Refined, minimalist dental care built around transparency, comfort, and patient education.
@@ -78,10 +78,10 @@
       <div style="width:100%; border-top:1px solid rgba(247,243,236,0.1); margin-top:2.5rem; padding-top:1.5rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; font-size:0.78rem;">
         <span>© 2026 · www.theminimalistdentist.in</span>
         <div style="display:flex; gap:1.5rem;">
-          <a href="index.html">Home</a>
-          <a href="services.html">Services</a>
-          <a href="blog.html">Blog</a>
-          <a href="contact.html">Contact</a>
+          <a href="/index.html">Home</a>
+          <a href="/services.html">Services</a>
+          <a href="/blog.html">Blog</a>
+          <a href="/contact.html">Contact</a>
         </div>
       </div>
     `;

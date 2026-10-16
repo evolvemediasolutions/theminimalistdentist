@@ -1,7 +1,7 @@
 const BLOG_POSTS = [
   {
     id: "why-most-people-brush-wrong",
-    slug: "why-most-people-brush-wrong.html",
+    slug: "/blog/why-most-people-brush-wrong",
     title: "Why most people brush wrong — and what actually works",
     category: "Prevention & Technique",
     date: "May 14, 2026",
@@ -48,7 +48,7 @@ const BLOG_POSTS = [
   },
   {
     id: "real-reason-gums-bleed",
-    slug: "real-reason-gums-bleed.html",
+    slug: "/blog/real-reason-gums-bleed",
     title: "The real reason your gums bleed — and when to worry",
     category: "Oral Health",
     date: "April 22, 2026",
@@ -92,7 +92,7 @@ const BLOG_POSTS = [
   },
   {
     id: "whitening-strips-vs-in-clinic-whitening",
-    slug: "whitening-strips-vs-in-clinic-whitening.html",
+    slug: "/blog/whitening-strips-vs-in-clinic-whitening",
     title: "Whitening strips vs. in-clinic whitening: an honest comparison",
     category: "Cosmetic Dentistry",
     date: "March 18, 2026",
@@ -147,7 +147,7 @@ const BLOG_POSTS = [
   },
   {
     id: "dental-anxiety-is-real",
-    slug: "dental-anxiety-is-real.html",
+    slug: "/blog/dental-anxiety-is-real",
     title: "Dental anxiety is real. Here's how we approach it.",
     category: "Patient Care & Comfort",
     date: "February 09, 2026",
@@ -187,7 +187,7 @@ const BLOG_POSTS = [
   },
   {
     id: "10-foods-that-quietly-damage-your-enamel",
-    slug: "10-foods-that-quietly-damage-your-enamel.html",
+    slug: "/blog/10-foods-that-quietly-damage-your-enamel",
     title: "10 foods that quietly damage your enamel",
     category: "Nutrition & Wellness",
     date: "January 27, 2026",
@@ -231,7 +231,7 @@ const BLOG_POSTS = [
   },
   {
     id: "dental-implants-guide-for-first-timers",
-    slug: "dental-implants-guide-for-first-timers.html",
+    slug: "/blog/dental-implants-guide-for-first-timers",
     title: "Dental implants: a guide for first-timers",
     category: "Restorative Dentistry",
     date: "December 15, 2025",
@@ -272,7 +272,7 @@ const BLOG_POSTS = [
   },
   {
     id: "when-should-children-get-first-check-up",
-    slug: "when-should-children-get-first-check-up.html",
+    slug: "/blog/when-should-children-get-first-check-up",
     title: "When should children get their first dental check-up?",
     category: "Pediatric Dentistry",
     date: "November 04, 2025",
