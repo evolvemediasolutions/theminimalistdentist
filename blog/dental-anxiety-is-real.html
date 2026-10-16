@@ -167,6 +167,10 @@
     .author-avatar {
       width: 38px;
       height: 38px;
+      min-width: 38px;
+      min-height: 38px;
+      aspect-ratio: 1 / 1;
+      flex-shrink: 0;
       border-radius: 50%;
       background: var(--charcoal);
       color: var(--ivory);
@@ -282,8 +286,37 @@
       padding-top: 2.5rem;
       border-top: 1px solid rgba(44,44,44,.1);
       display: flex;
-      gap: 1.5rem;
+      gap: 1.25rem;
       align-items: center;
+    }
+    .author-footer-card .author-avatar {
+      width: 50px;
+      height: 50px;
+      min-width: 50px;
+      min-height: 50px;
+      max-width: 50px;
+      max-height: 50px;
+      flex-shrink: 0;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      font-size: 1.4rem;
+    }
+    .author-footer-card > div:last-child {
+      flex: 1;
+      min-width: 0;
+    }
+    @media (max-width: 600px) {
+      .author-footer-card {
+        gap: 1rem;
+        align-items: center;
+      }
+      .author-footer-card .author-avatar {
+        width: 46px;
+        height: 46px;
+        min-width: 46px;
+        min-height: 46px;
+        font-size: 1.3rem;
+      }
     }
 
     .related-section {
@@ -480,7 +513,7 @@
       </div>
 
       <div class="author-footer-card">
-        <div class="author-avatar" style="width:50px;height:50px;font-size:1.4rem;">K</div>
+        <div class="author-avatar" style="width:50px;height:50px;min-width:50px;min-height:50px;flex-shrink:0;aspect-ratio:1/1;font-size:1.4rem;">K</div>
         <div>
           <strong style="color:var(--charcoal);font-size:1rem;">Prof. Dr. Krithika Datta, MDS, Dip.IBE</strong>
           <p style="font-size:.82rem;color:var(--muted);margin-top:.2rem;">Founding Dentist at The Minimalist Dentist. Passionate about evidence-based oral care, patient comfort, and clear communication.</p>
@@ -520,19 +553,6 @@
         <a href="/blog/when-should-children-get-first-check-up">Read Article →</a>
       </div>
     </div>
-  </section>
-
-  <!-- NEWSLETTER -->
-  <section class="newsletter">
-    <div class="newsletter-left">
-      <p class="article-category">Stay Informed</p>
-      <h2>Oral health insights,<br />once a month.</h2>
-      <p>No spam. No scare tactics. Just one well-researched email about your teeth and overall wellness.</p>
-    </div>
-    <form class="newsletter-form" onsubmit="event.preventDefault();">
-      <input type="email" placeholder="your@email.com" />
-      <button type="submit">Subscribe</button>
-    </form>
   </section>
 
   <footer>
