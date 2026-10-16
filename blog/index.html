@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Dental Health Blog &amp; Patient Guides | The Minimalist Dentist</title>
+  <meta name="title" content="Dental Health Blog &amp; Patient Guides | The Minimalist Dentist" />
+  <meta name="description" content="Evidence-based oral health articles, preventive tips, and calm dental guidance from The Minimalist Dentist in Chennai. Clear advice without scare tactics." />
+  <meta name="keywords" content="dental health blog Chennai, oral hygiene tips, teeth enamel protection, dental implants guide, brushing techniques, dental anxiety solutions" />
+  <meta name="author" content="The Minimalist Dentist" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <link rel="canonical" href="https://theminimalistdentist.in/blog.html" />
+
+  <!-- Geo & Local SEO Tags -->
+  <meta name="geo.region" content="IN-TN" />
+  <meta name="geo.placename" content="Chennai" />
+  <meta name="geo.position" content="13.0336;80.2520" />
+  <meta name="ICBM" content="13.0336, 80.2520" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://theminimalistdentist.in/blog.html" />
+  <meta property="og:title" content="Dental Health Blog &amp; Patient Guides | The Minimalist Dentist" />
+  <meta property="og:description" content="Evidence-based oral health articles, dental wellness guides, and transparent dental tips from Chennai's minimalist clinic." />
+  <meta property="og:image" content="https://theminimalistdentist.in/images/the-minimalist-dentist-original-4000px.png" />
+  <meta property="og:site_name" content="The Minimalist Dentist" />
+  <meta property="og:locale" content="en_IN" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://theminimalistdentist.in/blog.html" />
+  <meta property="twitter:title" content="Dental Health Blog &amp; Patient Guides | The Minimalist Dentist" />
+  <meta property="twitter:description" content="Evidence-based oral health articles and honest dental guidance from The Minimalist Dentist." />
+  <meta property="twitter:image" content="https://theminimalistdentist.in/images/the-minimalist-dentist-original-4000px.png" />
+
+  <!-- Favicon & Mobile Web -->
+  <link rel="icon" type="image/png" href="images/the-minimalist-dentist-original-4000px.png" />
+  <link rel="apple-touch-icon" href="images/the-minimalist-dentist-original-4000px.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <meta name="theme-color" content="#1F2421" />
+
+  <!-- Fonts & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- JSON-LD Structured Data: Blog Hub -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "The Minimalist Dentist Journal",
+    "url": "https://theminimalistdentist.in/blog.html",
+    "description": "Patient education, clinical insights, and transparent dental guides.",
+    "publisher": {
+      "@type": "Dentist",
+      "name": "The Minimalist Dentist",
+      "logo": "https://theminimalistdentist.in/images/the-minimalist-dentist-original-4000px.png"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --ivory:   #F7F3EC;
+      --orange:  #D96B3A;
+      --charcoal:#2C2C2C;
+      --muted:   #8A8478;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--ivory);
+      color: var(--charcoal);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 4rem;
+      background: var(--ivory);
+      border-bottom: 1px solid rgba(44,44,44,.08);
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.15rem;
+      letter-spacing: .08em;
+      color: var(--charcoal);
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: .78rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      text-decoration: none;
+      opacity: .7;
+      transition: opacity .2s;
+    }
+    .nav-links a:hover, .nav-links a.active { opacity: 1; }
+    .nav-links a.active { border-bottom: 1px solid var(--orange); padding-bottom: 2px; }
+
+    /* PAGE HERO */
+    .page-hero {
+      padding: 10rem 4rem 5rem;
+      border-bottom: 1px solid rgba(44,44,44,.08);
+    }
+    .eyebrow {
+      font-size: .72rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 1rem;
+    }
+    .page-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 1.1;
+      max-width: 700px;
+    }
+    .page-hero p {
+      margin-top: 1.5rem;
+      font-size: .95rem;
+      color: var(--muted);
+      max-width: 480px;
+      line-height: 1.9;
+    }
+
+    /* FEATURED POST */
+    .featured {
+      padding: 5rem 4rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      border-bottom: 1px solid rgba(44,44,44,.08);
+    }
+    .featured-visual {
+      background: var(--charcoal);
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .featured-visual span {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5rem;
+      color: rgba(217,107,58,.35);
+    }
+    .featured-badge {
+      font-size: .68rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 1rem;
+    }
+    .featured h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .featured-meta {
+      font-size: .78rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      letter-spacing: .04em;
+    }
+    .featured p {
+      font-size: .92rem;
+      color: var(--muted);
+      line-height: 1.9;
+      margin-bottom: 1.5rem;
+    }
+    .read-link {
+      font-size: .72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--orange);
+      text-decoration: none;
+    }
+    .read-link:hover { text-decoration: underline; }
+
+    /* BLOG GRID */
+    .blog-section {
+      padding: 5rem 4rem;
+    }
+    .blog-section h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.6rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(44,44,44,.1);
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2px;
+      background: rgba(44,44,44,.08);
+    }
+    .blog-card {
+      background: var(--ivory);
+      padding: 2rem;
+      transition: background .2s;
+    }
+    .blog-card:hover { background: #F0EBE1; }
+    .card-tag {
+      font-size: .65rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: .75rem;
+    }
+    .blog-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.25rem;
+      line-height: 1.3;
+      margin-bottom: .75rem;
+    }
+    .blog-card p {
+      font-size: .85rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+    .card-meta {
+      font-size: .72rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+    }
+    .card-meta a {
+      color: var(--orange);
+      text-decoration: none;
+      font-size: .7rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    /* NEWSLETTER */
+    .newsletter {
+      background: var(--charcoal);
+      color: var(--ivory);
+      padding: 6rem 4rem;
+      display: flex;
+      gap: 4rem;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .newsletter-left h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      margin-bottom: .75rem;
+    }
+    .newsletter-left p {
+      font-size: .88rem;
+      color: rgba(247,243,236,.5);
+      max-width: 360px;
+      line-height: 1.8;
+    }
+    .newsletter-form {
+      display: flex;
+      gap: 0;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+    .newsletter-form input {
+      background: rgba(247,243,236,.1);
+      border: 1px solid rgba(247,243,236,.15);
+      padding: .8rem 1.25rem;
+      font-family: 'Inter', sans-serif;
+      font-size: .88rem;
+      color: var(--ivory);
+      outline: none;
+      width: 260px;
+      transition: border-color .2s;
+    }
+    .newsletter-form input::placeholder { color: rgba(247,243,236,.35); }
+    .newsletter-form input:focus { border-color: var(--orange); }
+    .newsletter-form button {
+      background: var(--orange);
+      color: var(--ivory);
+      border: none;
+      padding: .8rem 1.5rem;
+      font-family: 'Inter', sans-serif;
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: opacity .2s;
+    }
+    .newsletter-form button:hover { opacity: .85; }
+
+    /* FOOTER */
+    footer {
+      background: var(--charcoal);
+      color: rgba(247,243,236,.5);
+      padding: 3rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: .78rem;
+      letter-spacing: .05em;
+      border-top: 1px solid rgba(247,243,236,.05);
+    }
+    footer .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: var(--ivory);
+      letter-spacing: .08em;
+    }
+    footer a { color: rgba(247,243,236,.5); text-decoration: none; }
+    footer a:hover { color: var(--orange); }
+
+    @media (max-width: 768px) {
+      nav { padding: 1.25rem 1.5rem; }
+      .nav-links { gap: 1.5rem; }
+      .page-hero, .featured, .blog-section, .newsletter, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .featured { grid-template-columns: 1fr; gap: 2rem; }
+      .newsletter { flex-direction: column; gap: 2rem; }
+      .newsletter-form input { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <img src="images/the-minimalist-dentist-original-4000px.png" alt="The Minimalist Dentist Logo" class="nav-logo-img" />
+      <span>The Minimalist Dentist</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <p class="eyebrow">The Journal</p>
+    <h1>Thoughts on teeth,<br />health, and simplicity.</h1>
+    <p>
+      We write about oral health in plain language — practical, honest, and free of unnecessary alarm.
+    </p>
+  </section>
+
+  <!-- FEATURED POST -->
+  <section class="featured">
+    <div class="featured-visual"><span>◎</span></div>
+    <div class="featured-content">
+      <p class="featured-badge">Featured</p>
+      <h2><a href="/blog/why-most-people-brush-wrong" style="color:inherit;text-decoration:none;">Why most people brush wrong — and what actually works</a></h2>
+      <p class="featured-meta">May 2026 &nbsp;·&nbsp; 5 min read</p>
+      <p>
+        You've been doing it your whole life, but chances are your technique has a flaw or two.
+        We break down the science of brushing — angles, pressure, timing — so you can stop causing
+        micro-damage you didn't know was happening.
+      </p>
+      <a class="read-link" href="/blog/why-most-people-brush-wrong">Read Article →</a>
+    </div>
+  </section>
+
+  <!-- BLOG GRID -->
+  <section class="blog-section">
+    <h3>All Articles</h3>
+    <div class="blog-grid">
+
+      <div class="blog-card">
+        <p class="card-tag">Oral Health</p>
+        <h4><a href="/blog/real-reason-gums-bleed" style="color:inherit;text-decoration:none;">The real reason your gums bleed — and when to worry</a></h4>
+        <p>Bleeding gums aren't just an inconvenience. Here's what your body is trying to tell you, and when it warrants a visit.</p>
+        <div class="card-meta">
+          <span>April 2026 · 4 min</span>
+          <a href="/blog/real-reason-gums-bleed">Read →</a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <p class="card-tag">Cosmetic</p>
+        <h4><a href="/blog/whitening-strips-vs-in-clinic-whitening" style="color:inherit;text-decoration:none;">Whitening strips vs. in-clinic whitening: an honest comparison</a></h4>
+        <p>We're not here to sell you anything. Here's a straightforward look at what actually works, what doesn't, and for whom.</p>
+        <div class="card-meta">
+          <span>March 2026 · 6 min</span>
+          <a href="/blog/whitening-strips-vs-in-clinic-whitening">Read →</a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <p class="card-tag">Anxiety</p>
+        <h4><a href="/blog/dental-anxiety-is-real" style="color:inherit;text-decoration:none;">Dental anxiety is real. Here's how we approach it.</a></h4>
+        <p>An estimated 1 in 6 Indians avoids the dentist due to fear. We share what we do differently — and why it works.</p>
+        <div class="card-meta">
+          <span>February 2026 · 5 min</span>
+          <a href="/blog/dental-anxiety-is-real">Read →</a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <p class="card-tag">Nutrition</p>
+        <h4><a href="/blog/10-foods-that-quietly-damage-your-enamel" style="color:inherit;text-decoration:none;">10 foods that quietly damage your enamel</a></h4>
+        <p>Some are obvious. Many will surprise you. A practical guide to what to moderate — not eliminate — for healthier teeth.</p>
+        <div class="card-meta">
+          <span>January 2026 · 4 min</span>
+          <a href="/blog/10-foods-that-quietly-damage-your-enamel">Read →</a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <p class="card-tag">Implants</p>
+        <h4><a href="/blog/dental-implants-guide-for-first-timers" style="color:inherit;text-decoration:none;">Dental implants: a guide for first-timers</a></h4>
+        <p>What the procedure actually feels like, how long it takes, and whether it's worth the investment — answered plainly.</p>
+        <div class="card-meta">
+          <span>December 2025 · 7 min</span>
+          <a href="/blog/dental-implants-guide-for-first-timers">Read →</a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <p class="card-tag">Children</p>
+        <h4><a href="/blog/when-should-children-get-first-check-up" style="color:inherit;text-decoration:none;">When should children get their first dental check-up?</a></h4>
+        <p>Earlier than most parents think. We explain the timelines, the milestones, and how to make it a positive experience.</p>
+        <div class="card-meta">
+          <span>November 2025 · 3 min</span>
+          <a href="/blog/when-should-children-get-first-check-up">Read →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <div class="newsletter-left">
+      <p class="eyebrow" style="color:var(--orange)">Stay Informed</p>
+      <h2>Oral health insights,<br />once a month.</h2>
+      <p>No spam. No scare tactics. Just one well-researched email about your teeth and overall wellness.</p>
+    </div>
+    <form class="newsletter-form" onsubmit="event.preventDefault();">
+      <input type="email" placeholder="your@email.com" />
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <footer>
+    <a class="footer-logo" href="index.html">
+      <img src="images/the-minimalist-dentist-original-4000px.png" alt="The Minimalist Dentist Logo" class="footer-logo-img" />
+      <span>The Minimalist Dentist</span>
+    </a>
+    <span>© 2026 · www.theminimalistdentist.in</span>
+    <div style="display:flex;gap:1.5rem;">
+      <a href="services.html">Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

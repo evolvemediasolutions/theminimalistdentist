@@ -1,48 +1,49 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "rewrites": [
     {
-      "source": "/blog",
-      "destination": "/blog.html"
+      "source": "/blog/:slug",
+      "destination": "/blog/:slug.html"
     },
     {
       "source": "/blog/:slug",
-      "destination": "/blog-post.html?slug=:slug"
+      "destination": "/blog-post.html"
     }
   ],
   "redirects": [
     {
-      "source": "/why-most-people-brush-wrong.html",
+      "source": "/why-most-people-brush-wrong",
       "destination": "/blog/why-most-people-brush-wrong",
       "permanent": true
     },
     {
-      "source": "/real-reason-gums-bleed.html",
+      "source": "/real-reason-gums-bleed",
       "destination": "/blog/real-reason-gums-bleed",
       "permanent": true
     },
     {
-      "source": "/whitening-strips-vs-in-clinic-whitening.html",
+      "source": "/whitening-strips-vs-in-clinic-whitening",
       "destination": "/blog/whitening-strips-vs-in-clinic-whitening",
       "permanent": true
     },
     {
-      "source": "/dental-anxiety-is-real.html",
+      "source": "/dental-anxiety-is-real",
       "destination": "/blog/dental-anxiety-is-real",
       "permanent": true
     },
     {
-      "source": "/10-foods-that-quietly-damage-your-enamel.html",
+      "source": "/10-foods-that-quietly-damage-your-enamel",
       "destination": "/blog/10-foods-that-quietly-damage-your-enamel",
       "permanent": true
     },
     {
-      "source": "/dental-implants-guide-for-first-timers.html",
+      "source": "/dental-implants-guide-for-first-timers",
       "destination": "/blog/dental-implants-guide-for-first-timers",
       "permanent": true
     },
     {
-      "source": "/when-should-children-get-first-check-up.html",
+      "source": "/when-should-children-get-first-check-up",
       "destination": "/blog/when-should-children-get-first-check-up",
       "permanent": true
     }

@@ -134,12 +134,19 @@ const server = http.createServer(async (req, res) => {
   // Legacy redirects for article URLs
   const legacyArticleRedirects = {
     '/why-most-people-brush-wrong.html': '/blog/why-most-people-brush-wrong',
+    '/why-most-people-brush-wrong': '/blog/why-most-people-brush-wrong',
     '/real-reason-gums-bleed.html': '/blog/real-reason-gums-bleed',
+    '/real-reason-gums-bleed': '/blog/real-reason-gums-bleed',
     '/whitening-strips-vs-in-clinic-whitening.html': '/blog/whitening-strips-vs-in-clinic-whitening',
+    '/whitening-strips-vs-in-clinic-whitening': '/blog/whitening-strips-vs-in-clinic-whitening',
     '/dental-anxiety-is-real.html': '/blog/dental-anxiety-is-real',
+    '/dental-anxiety-is-real': '/blog/dental-anxiety-is-real',
     '/10-foods-that-quietly-damage-your-enamel.html': '/blog/10-foods-that-quietly-damage-your-enamel',
+    '/10-foods-that-quietly-damage-your-enamel': '/blog/10-foods-that-quietly-damage-your-enamel',
     '/dental-implants-guide-for-first-timers.html': '/blog/dental-implants-guide-for-first-timers',
+    '/dental-implants-guide-for-first-timers': '/blog/dental-implants-guide-for-first-timers',
     '/when-should-children-get-first-check-up.html': '/blog/when-should-children-get-first-check-up',
+    '/when-should-children-get-first-check-up': '/blog/when-should-children-get-first-check-up',
   };
 
   if (legacyArticleRedirects[pathname]) {
@@ -148,12 +155,18 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
-  // Dynamic Blog Routing: /blog/:slug -> blog-post.html, /blog -> blog.html
+  // Dynamic Blog Routing: /blog/:slug -> static in blog/ folder, else dynamic blog-post.html
   let filePath;
   if (pathname.startsWith('/blog/') && pathname !== '/blog/' && !path.extname(pathname)) {
-    filePath = path.join(ROOT_DIR, 'blog-post.html');
+    const slug = pathname.replace(/^\/blog\//, '').replace(/\/$/, '');
+    const staticBlogPath = path.join(ROOT_DIR, 'blog', `${slug}.html`);
+    if (fs.existsSync(staticBlogPath)) {
+      filePath = staticBlogPath;
+    } else {
+      filePath = path.join(ROOT_DIR, 'blog-post.html');
+    }
   } else if (pathname === '/blog' || pathname === '/blog/') {
-    filePath = path.join(ROOT_DIR, 'blog.html');
+    filePath = path.join(ROOT_DIR, 'blog', 'index.html');
   } else {
     filePath = path.join(ROOT_DIR, pathname);
   }
