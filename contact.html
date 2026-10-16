@@ -58,7 +58,7 @@
       "@type": "Dentist",
       "name": "The Minimalist Dentist",
       "image": "https://theminimalistdentist.in/images/the-minimalist-dentist-original-4000px.png",
-      "telephone": "+91-9150007144",
+      "telephone": "+91 98401 11369",
       "email": "contact@theminimalistdentist.in",
       "hasMap": "https://maps.google.com/maps?q=8/38,+Prithvi+Avenue,+2nd+Street,+Abhiramapuram,+Chennai+-+600018",
       "address": {
@@ -404,9 +404,9 @@
       <div class="info-block">
         <p class="info-label">Contact Number</p>
         <p>
-          <a href="tel:+919150007144" style="font-weight:600; font-size:1.05rem;">+91-9150007144</a><br />
+          <a href="tel:+919840111369" style="font-weight:600; font-size:1.05rem;">+91 98401 11369</a><br />
           <a href="mailto:contact@theminimalistdentist.in">contact@theminimalistdentist.in</a><br />
-          <a href="https://wa.me/919150007144" target="_blank" rel="noopener" style="color:var(--orange); font-weight:500;">WhatsApp Us →</a>
+          <a href="https://wa.me/919840111369" target="_blank" rel="noopener" style="color:var(--orange); font-weight:500;">WhatsApp Us →</a>
         </p>
       </div>
 
@@ -569,12 +569,12 @@
           form.reset();
         } else {
           const errMsg = result && result.error ? result.error : 'Could not send appointment request at this moment.';
-          errorMsg.innerHTML = `<strong>Error:</strong> ${errMsg}<br /><span style="display:inline-block; margin-top:6px; font-size:0.84rem;">You can also contact us immediately at <a href="tel:+919150007144" style="color:inherit; font-weight:600; text-decoration:underline;">+91-9150007144</a> or message us on <a href="https://wa.me/919150007144" target="_blank" rel="noopener" style="color:var(--orange); font-weight:600;">WhatsApp</a>.</span>`;
+          errorMsg.innerHTML = `<strong>Error:</strong> ${errMsg}<br /><span style="display:inline-block; margin-top:6px; font-size:0.84rem;">You can also contact us immediately at <a href="tel:+919840111369" style="color:inherit; font-weight:600; text-decoration:underline;">+91 98401 11369</a> or message us on <a href="https://wa.me/919840111369" target="_blank" rel="noopener" style="color:var(--orange); font-weight:600;">WhatsApp</a>.</span>`;
           errorMsg.style.display = 'block';
         }
       } catch (err) {
         console.error('[Booking Submit Error]', err);
-        errorMsg.innerHTML = `<strong>Service Unavailable:</strong> Unable to connect to the email API.<br /><span style="display:inline-block; margin-top:6px; font-size:0.84rem;">If running locally, start with <code>npm run dev</code> or <code>node server.js</code>. You can also reach us directly at <a href="tel:+919150007144" style="color:inherit; font-weight:600; text-decoration:underline;">+91-9150007144</a> or <a href="mailto:contact@theminimalistdentist.in" style="color:inherit; font-weight:600; text-decoration:underline;">contact@theminimalistdentist.in</a>.</span>`;
+        errorMsg.innerHTML = `<strong>Service Unavailable:</strong> Unable to connect to the email API.<br /><span style="display:inline-block; margin-top:6px; font-size:0.84rem;">If running locally, start with <code>npm run dev</code> or <code>node server.js</code>. You can also reach us directly at <a href="tel:+919840111369" style="color:inherit; font-weight:600; text-decoration:underline;">+91 98401 11369</a> or <a href="mailto:contact@theminimalistdentist.in" style="color:inherit; font-weight:600; text-decoration:underline;">contact@theminimalistdentist.in</a>.</span>`;
         errorMsg.style.display = 'block';
       } finally {
         submitBtn.disabled = false;
