@@ -5,12 +5,23 @@
   "start_url": "/",
   "display": "standalone",
   "background_color": "#F7F3EC",
-  "theme_color": "#1F2421",
+  "theme_color": "#F7F3EC",
   "icons": [
     {
-      "src": "images/the-minimalist-dentist-original-4000px.png",
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/the-minimalist-dentist-original-4000px.png",
       "sizes": "512x512",
       "type": "image/png"
     }
   ]
 }
+
