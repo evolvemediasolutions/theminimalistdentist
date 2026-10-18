@@ -178,17 +178,24 @@
     /* ARTWORK BANNER */
     .article-visual-banner {
       width: 100%;
-      height: 320px;
-      background: var(--charcoal);
-      margin: 2rem 0 3.5rem;
+      margin: 2.2rem 0 3.5rem;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #FAF6EE;
+      border: 1px solid rgba(44, 44, 44, 0.08);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    .article-visual-banner span {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 6rem;
-      color: rgba(217,107,58,.4);
+    .article-visual-banner img,
+    .article-hero-img {
+      width: 100%;
+      height: auto;
+      max-height: 520px;
+      object-fit: contain;
+      display: block;
+      background: #FAF6EE;
     }
 
     /* MAIN CONTENT LAYOUT */
@@ -495,7 +502,7 @@
         <span>·</span>
         <span id="post-readtime">5 min read</span>
       </div>
-      <div class="article-visual-banner"><span id="post-icon">◎</span></div>
+      <div class="article-visual-banner" id="article-banner"><img id="post-image" src="/images/BLOG%20IMAGES/2-why-saving-your-tooth-is-important.png" alt="Blog Illustration" class="article-hero-img" /></div>
     </div>
 
     <div class="article-body-wrapper">
@@ -566,7 +573,8 @@
         ? (BLOG_POSTS.find(p => {
             const pIdNorm = norm(p.id);
             const pSlugNorm = norm(p.slug);
-            return pIdNorm === targetNorm || pSlugNorm === targetNorm || pSlugNorm.includes(targetNorm) || targetNorm.includes(pIdNorm);
+            const aliases = (p.aliases || []).map(norm);
+            return pIdNorm === targetNorm || pSlugNorm === targetNorm || aliases.includes(targetNorm) || pSlugNorm.includes(targetNorm) || targetNorm.includes(pIdNorm);
           }) || BLOG_POSTS[0])
         : null;
 
@@ -600,8 +608,15 @@
       if (dateEl) dateEl.textContent = post.date;
       const readtimeEl = document.getElementById('post-readtime');
       if (readtimeEl) readtimeEl.textContent = post.readTime;
-      const iconEl = document.getElementById('post-icon');
-      if (iconEl) iconEl.textContent = post.heroIcon;
+      const imgEl = document.getElementById('post-image');
+      if (imgEl && post.image) {
+        imgEl.src = post.image;
+        imgEl.alt = post.title;
+      }
+      const ogImg = document.querySelector('meta[property="og:image"]');
+      if (ogImg && post.image) ogImg.setAttribute('content', 'https://www.theminimalistdentist.in' + post.image);
+      const twImg = document.querySelector('meta[name="twitter:image"]');
+      if (twImg && post.image) twImg.setAttribute('content', 'https://www.theminimalistdentist.in' + post.image);
       const contentEl = document.getElementById('post-content');
       if (contentEl) contentEl.innerHTML = post.content;
 
@@ -612,6 +627,7 @@
         relatedGrid.innerHTML = related.map(rel => `
           <div class="related-card">
             <div>
+              ${rel.image ? `<a href="/blog/${rel.id}"><div class="related-card-thumb"><img src="${rel.image}" alt="${rel.title}" loading="lazy" /></div></a>` : ''}
               <p class="article-category" style="margin-bottom:.5rem;">${rel.category}</p>
               <h4>${rel.title}</h4>
               <p>${rel.excerpt.substring(0, 95)}...</p>

@@ -10,6 +10,8 @@ const BLOG_POSTS = [
     authorRole: "Lead Practitioner & Founder",
     excerpt: "You've been doing it your whole life, but chances are your technique has a flaw or two. We break down the science of brushing — angles, pressure, timing — so you can stop causing micro-damage you didn't know was happening.",
     heroIcon: "◎",
+    image: "/images/BLOG%20IMAGES/2-why-saving-your-tooth-is-important.png",
+    aliases: ["why-saving-your-tooth-is-important", "saving-your-tooth"],
     content: `
       <p class="lead">For something we do twice a day, brushing teeth is surprisingly misunderstood. Most adults brush too hard, move in quick horizontal saw-like strokes, or stop after less than 45 seconds. Over time, these habits cause tooth sensitivity, enamel abrasion, and receding gums.</p>
 
@@ -57,6 +59,7 @@ const BLOG_POSTS = [
     authorRole: "Lead Practitioner & Founder",
     excerpt: "Bleeding gums aren't just an inconvenience. Here's what your body is trying to tell you, and when it warrants a visit.",
     heroIcon: "🩸",
+    image: "/images/BLOG%20IMAGES/1-real-reason-gums-bleed.png",
     content: `
       <p class="lead">If your hands bled whenever you washed them, you would seek medical attention immediately. Yet, many people accept bleeding gums as a normal part of brushing or flossing. It is not.</p>
 
@@ -101,6 +104,7 @@ const BLOG_POSTS = [
     authorRole: "Cosmetic Dental Specialist",
     excerpt: "We're not here to sell you anything. Here's a straightforward look at what actually works, what doesn't, and for whom.",
     heroIcon: "✦",
+    image: "/images/BLOG%20IMAGES/3-whitening-strips-vs-in-clinic-whitening.png",
     content: `
       <p class="lead">Teeth whitening has become one of the most requested cosmetic dental procedures. With hundreds of OTC products claiming movie-star results, it is easy to get confused. Let's compare options with complete transparency.</p>
 
@@ -146,6 +150,64 @@ const BLOG_POSTS = [
     `
   },
   {
+    id: "veneers-transform-your-smile-preserve-tooth-structure",
+    slug: "/blog/veneers-transform-your-smile-preserve-tooth-structure",
+    title: "Veneers: transform your smile while preserving tooth structure",
+    category: "Cosmetic Dentistry",
+    date: "March 02, 2026",
+    readTime: "5 min read",
+    author: "Prof. Dr. Krithika Datta, MDS, Dip.IBE",
+    authorRole: "Cosmetic Dental Specialist",
+    excerpt: "Modern ultrathin porcelain veneers require minimal to no enamel preparation. Here is how minimalist aesthetics enhance your natural smile while preserving healthy tooth structure.",
+    heroIcon: "✨",
+    image: "/images/BLOG%20IMAGES/4-veneers-transform-your-smile-preserve-tooth-structure.png",
+    aliases: ["veneers-transform-your-smile", "dental-veneers-guide"],
+    content: `
+      <p class="lead">For years, the word "veneers" evoked images of aggressive drilling, bulky unnatural teeth, and lifelong maintenance worries. Modern minimally invasive dentistry has completely transformed this with ultrathin veneers (0.3mm–0.5mm) that require minimal or zero enamel removal.</p>
+
+      <div class="takeaway-box">
+        <h4>Key Takeaways</h4>
+        <ul>
+          <li><strong>Minimal Enamel Preparation:</strong> Modern ceramic veneers are as thin as contact lenses (0.3–0.5mm), keeping nearly 100% of your healthy enamel intact.</li>
+          <li><strong>Biocompatible Adhesion:</strong> High-strength bonding fuses porcelain directly with enamel, creating an unbreakable, stain-resistant surface.</li>
+          <li><strong>Natural Translucency:</strong> Custom-layered ceramics mimic natural tooth fluorescence, depth, and optical contours rather than looking artificially opaque.</li>
+        </ul>
+      </div>
+
+      <h2>1. What Are Ultrathin Minimalist Veneers?</h2>
+      <p>Traditional veneers historically required shaving down 1mm to 2mm of sound tooth structure, sometimes encroaching dangerously close to the dental pulp. In contrast, our conservative approach uses micro-thin lithium disilicate or feldspathic porcelain shells measuring just 0.3 to 0.5 millimeters thick — about the thickness of a contact lens.</p>
+      <p>Because so little tooth modification is required, the underlying biological strength of your natural tooth remains completely intact.</p>
+
+      <h2>2. Who Is an Ideal Candidate for Conservative Veneers?</h2>
+      <ul>
+        <li>Chipped, cracked, or worn edges from natural wear or minor trauma.</li>
+        <li>Intrinsic discoloration or tetracycline staining that does not respond to standard whitening.</li>
+        <li>Minor gaps (diastemas) or uneven spacing between front teeth.</li>
+        <li>Teeth with irregular shapes or slight developmental asymmetries.</li>
+      </ul>
+
+      <h2>3. The Minimalist Digital Workflow</h2>
+      <ol>
+        <li><strong>Digital Smile Design:</strong> High-definition photography and 3D intraoral scans map your facial proportions, lip line, and bite physics.</li>
+        <li><strong>Preview & Trial Smile:</strong> A temporary mock-up allows you to preview the exact shape, texture, and smile dynamic before any ceramic is fabricated.</li>
+        <li><strong>Micro-Precision Bonding:</strong> Individual custom veneers are hand-finished by master ceramists and bonded under isolation with specialized adhesive resins.</li>
+      </ol>
+
+      <blockquote>
+        "The highest form of aesthetic dentistry is when nobody can tell you had dental work done — they simply see a luminous, confident smile that belongs uniquely to you."
+      </blockquote>
+
+      <h2>4. Longevity and Maintenance</h2>
+      <p>With proper brushing habits, routine cleanings, and nightguard protection if you grind your teeth, modern porcelain veneers last 15 to 20 years or longer without losing their gloss or color stability.</p>
+
+      <div class="article-cta">
+        <h3>Considering a smile enhancement?</h3>
+        <p>Schedule a calm, conservative cosmetic consultation to evaluate whether ultrathin veneers are the right fit for your teeth.</p>
+        <a href="contact.html" class="btn">Book Aesthetic Consultation</a>
+      </div>
+    `
+  },
+  {
     id: "dental-anxiety-is-real",
     slug: "/blog/dental-anxiety-is-real",
     title: "Dental anxiety is real. Here's how we approach it.",
@@ -156,6 +218,7 @@ const BLOG_POSTS = [
     authorRole: "Lead Practitioner & Founder",
     excerpt: "An estimated 1 in 6 Indians avoids the dentist due to fear. We share what we do differently — and why it works.",
     heroIcon: "🌿",
+    image: "/images/BLOG%20IMAGES/5-dental-anxiety-is-real.png",
     content: `
       <p class="lead">Dental phobia is not a minor inconvenience — it is a genuine obstacle that causes millions of people to delay routine care until small, treatable issues turn into painful emergencies. We built our entire practice philosophy around dismantling this anxiety.</p>
 
@@ -196,6 +259,7 @@ const BLOG_POSTS = [
     authorRole: "Cosmetic Dental Specialist",
     excerpt: "Some are obvious. Many will surprise you. A practical guide to what to moderate — not eliminate — for healthier teeth.",
     heroIcon: "🍋",
+    image: "/images/BLOG%20IMAGES/6-10-foods-that-quietly-damage-your-enamel.png",
     content: `
       <p class="lead">Enamel is the hardest tissue in the human body, but it has one major weakness: acid. Once enamel erodes, your body cannot regenerate it. Here are 10 everyday foods that can silently weaken your tooth enamel.</p>
 
@@ -240,6 +304,7 @@ const BLOG_POSTS = [
     authorRole: "Lead Practitioner & Founder",
     excerpt: "What the procedure actually feels like, how long it takes, and whether it's worth the investment — answered plainly.",
     heroIcon: "⚙︎",
+    image: "/images/BLOG%20IMAGES/7-dental-implants-guide-for-first-timers.png",
     content: `
       <p class="lead">Missing a tooth affects more than just your smile — it changes how you chew, alters your speech, and leads to gradual jawbone loss over time. Dental implants offer the closest match to natural teeth available in modern dentistry.</p>
 
@@ -281,6 +346,7 @@ const BLOG_POSTS = [
     authorRole: "Lead Practitioner & Founder",
     excerpt: "Earlier than most parents think. We explain the timelines, the milestones, and how to make it a positive experience.",
     heroIcon: "👶",
+    image: "/images/BLOG%20IMAGES/8-when-should-children-get-first-check-up.png",
     content: `
       <p class="lead">Most parents assume a child's first dentist appointment isn't necessary until all milk teeth have come in or school starts. However, pediatric dental associations worldwide recommend a visit much earlier.</p>
 

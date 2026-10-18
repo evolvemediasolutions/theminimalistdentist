@@ -18,6 +18,16 @@
       "permanent": true
     },
     {
+      "source": "/why-saving-your-tooth-is-important",
+      "destination": "/blog/why-most-people-brush-wrong",
+      "permanent": true
+    },
+    {
+      "source": "/blog/why-saving-your-tooth-is-important",
+      "destination": "/blog/why-most-people-brush-wrong",
+      "permanent": true
+    },
+    {
       "source": "/real-reason-gums-bleed",
       "destination": "/blog/real-reason-gums-bleed",
       "permanent": true
@@ -25,6 +35,11 @@
     {
       "source": "/whitening-strips-vs-in-clinic-whitening",
       "destination": "/blog/whitening-strips-vs-in-clinic-whitening",
+      "permanent": true
+    },
+    {
+      "source": "/veneers-transform-your-smile-preserve-tooth-structure",
+      "destination": "/blog/veneers-transform-your-smile-preserve-tooth-structure",
       "permanent": true
     },
     {
