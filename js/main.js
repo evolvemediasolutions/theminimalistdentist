@@ -69,9 +69,9 @@
 
         <div class="footer-info" style="font-size:0.82rem; color:rgba(247,243,236,0.7); line-height:1.7;">
           <strong style="display:block; margin-bottom:0.4rem; text-transform:uppercase; letter-spacing:0.12em; font-size:0.7rem; color:var(--orange);">Contact</strong>
-          <a href="tel:+919840111369" style="color:var(--ivory); font-weight:500; text-decoration:none; font-size:0.95rem;">+91 98401 11369</a><br />
+          <a href="tel:+919150007144" style="color:var(--ivory); font-weight:500; text-decoration:none; font-size:0.95rem;">+91 91500 07144</a><br />
           <a href="mailto:contact@theminimalistdentist.in" style="color:rgba(247,243,236,0.85); text-decoration:none;">contact@theminimalistdentist.in</a><br />
-          <a href="https://wa.me/919840111369" target="_blank" rel="noopener" style="color:var(--orange); font-size:0.78rem; text-decoration:none; font-weight:500;">WhatsApp Us →</a>
+          <a href="https://wa.me/919150007144" target="_blank" rel="noopener" style="color:var(--orange); font-size:0.78rem; text-decoration:none; font-weight:500;">WhatsApp Us →</a>
         </div>
       </div>
 
